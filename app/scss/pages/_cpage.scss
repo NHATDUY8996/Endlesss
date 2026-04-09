@@ -247,4 +247,98 @@
             }
         }
     }
+
+}
+
+.sec-journal {
+    padding: 18.6rem 0 10rem;
+}
+
+.journal {
+    &-head {}
+
+    &-item {
+        height: 100%;
+
+        .wrap {
+            height: 100%;
+            @include flex-col;
+            row-gap: 2rem;
+        }
+
+        .t-tag {
+            width: fit-content;
+            min-height: 3.6rem;
+            @include mid-flex;
+            border-radius: 100rem;
+            background-color: var(--color-second);
+            color: #1F2A1A;
+            padding: 1rem;
+            @include fz-14;
+        }
+
+        .t-date {
+            @include fz-14;
+            color: #1F2A1A;
+        }
+    }
+
+    &-thumb {
+        position: relative;
+        width: 100%;
+    }
+
+    &-thumb-in {
+        @include imgPd(280, 389);
+        border-radius: 1.6rem;
+
+        @include max(1200px) {
+            border-radius: .8rem;
+        }
+
+        img {
+            @include imgCover;
+        }
+    }
+
+    &-content {
+        @include flex-col;
+        row-gap: 1.2rem;
+    }
+
+    &-info {
+        display: inline-flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: .6rem;
+    }
+
+    &-tt {
+        @include font-second;
+        line-height: 130%;
+        @include fz-28;
+        font-weight: bold;
+        color: var(--color-pri);
+        @include lc(2);
+        text-transform: uppercase;
+        transition: all .3s ease;
+
+        @include hover() {
+            color: var(--color-second);
+        }
+    }
+
+    &-desc {
+        @include lc(2);
+    }
+}
+
+.head-center {
+    @include flex-col;
+    align-items: center;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
 }
