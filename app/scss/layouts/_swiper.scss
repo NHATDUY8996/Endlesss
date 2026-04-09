@@ -1,0 +1,212 @@
+.swiper {
+    &-slide {
+        height: auto;
+    }
+
+    &-btn {
+        position: absolute;
+        --wbtn: 4rem;
+        @include mid-flex;
+        width: var(--wbtn);
+        height: var(--wbtn);
+        border-radius: 100%;
+        overflow: hidden;
+        top: 50%;
+        transform: translate(0, -50%);
+        z-index: 1;
+        color: var(--white);
+        background-color: var(--color-second);
+        cursor: pointer;
+        transition: all .6s ease;
+        border: .1rem solid var(--color-second);
+        flex-shrink: 0;
+        @include fz-16;
+        @include max(1300px) {
+            --wbtn: 3.6rem;
+        }
+        &.swiper-button-lock{
+            display: none !important;
+        }
+        &::before {
+            position: absolute;
+            content: '';
+            pointer-events: none;
+            inset: 0;
+            z-index: -1;
+            border-radius: 100%;
+            transform: scale(0);
+            background-color: var(--color-pri-in);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+        }
+
+        img {
+            width: 40%;
+            height: 40%;
+            object-fit: contain;
+            display: block;
+            filter: var(--filter);
+        }
+        @include hover {
+            border-color: var(--color-pri);
+
+            &::before {
+                transform: scale(1);
+            }
+        }
+
+        &.swiper-button-disabled {
+            pointer-events: none;
+            opacity: .5;
+            &::before {
+                transform: scale(0) !important;
+            }
+
+            img {
+                filter: var(--filter-text);
+            }
+
+            &::before {
+                // right: 0;
+                // width: 100%;
+                transform: scale(1);
+            }
+        }
+
+    }
+    &-next {
+        right: calc(-1 * var(--wbtn)/2);
+        img{
+            transform: translateX(.1rem);
+        }
+        @include max(1610px) {
+            right: 0;
+        }
+    }
+
+    &-prev {
+        left: calc(-1 * var(--wbtn)/2);
+        img{
+            transform: translateX(-.1rem);
+        }
+        @include max(1610px) {
+            left: 0;
+        }
+    }
+    &-pagination {
+        bottom: 0 !important;
+        @include mid-flex;
+        gap: 1rem;
+        margin: 3rem auto 0 !important;
+        position: relative;
+        flex-wrap: wrap;
+        &.dflexpagi{
+            display: flex;
+        }
+        &-progressbar {
+            position: absolute !important;
+        }
+
+        &-bullet {
+            --wbul: 1.2rem;
+            width: var(--wbul);
+            height: var(--wbul);
+            background-color: var(--border);
+            transition: all .3s ease;
+            opacity: .8 !important;
+            position: relative;
+            margin: 0 !important;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 3rem;
+            overflow: hidden;
+            border: .1rem solid transparent;
+            // @include max(800px){
+            //     --wbul: 2.2rem;
+            // }
+         
+            &-active {
+                opacity: 1 !important;
+                background-color: var(--color-pri);
+                width: 3rem;
+                &::before{
+                    background-color: var(--color-pri)
+                }
+            }
+
+
+        }
+    }
+    &-scrollbar{
+        height: .2rem;
+        &-drag{
+            background-color: var(--color-pri);
+            height: .3rem;
+            cursor: pointer;
+        }
+    }
+}
+.swiper-gr {
+    @include mid-flex;
+    gap: 1.2rem 1.6rem;
+    margin: 0 auto;
+    
+    &.swiper-ctn {
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: var(--ctn);
+        max-width: calc(100% - 3rem);
+        pointer-events: none;
+
+        .swiper-btn {
+            pointer-events: visible;
+        }
+    }
+    
+    .swiper-pagination {
+        @include min(1201px) {
+            display: none;
+        }
+    }
+    &.relative{
+        @include min(1200px){
+            @include flex;
+            gap: 1.6rem;
+            align-items: center;
+            justify-content: flex-start;
+            margin-right: auto;
+            .swiper-btn{
+                position: relative;
+                left: auto;
+                right: auto;
+                top: auto;
+                transform: unset;
+            }
+        }
+        @include max(768px){
+            display: none;
+        }
+    }
+
+    &.fraction{
+        .swiper-pagination {
+            font-size: 1.6rem;
+            font-weight: 500;
+            gap: .2rem;
+            color: var(--color-pri);
+            padding: .4rem 1.6rem;
+            background-color: var(--color-third);
+            border-radius: 3rem;
+            width: auto;
+        }
+    }
+    &.has-pagi{
+        .swiper-pagination {
+            display: flex;
+        }
+    }
+}

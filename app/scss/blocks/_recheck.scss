@@ -1,0 +1,117 @@
+.recheck{
+    &-item{
+     >.recheck-list{
+        >.recheck-item{
+            .recheck-label{
+                margin-left: 2rem;
+            }
+        }
+     }
+    }
+    
+    &-label{
+        position: relative;
+        --wicon: 2rem;
+        --gap: .8rem;
+        padding: 1.2rem;
+       display: block;
+       cursor: pointer;
+  
+        input{
+            display: none;
+        }
+        .recheck-input:checked + .recheck-des::after{
+         opacity: 1;
+        }
+        .recheck-input:checked + .recheck-des::before{
+            opacity: 0;
+           }
+    }
+    &-des{
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        gap: .4rem;
+        padding-left: calc(var(--gap) + var(--wicon));
+        &::before{
+            position: absolute;
+            content: '';
+            width: var(--wicon);
+            height: var(--wicon);
+            left: 0;
+            top: calc(50% - .1rem);
+            transform: translate(0,-50%);
+            z-index: 1;
+            background: center / contain no-repeat url(../../assets/images/check.png);
+            transition: all .3s ease;
+            cursor: pointer;
+        }
+        &::after{
+            position: absolute;
+            content: '';
+            width: var(--wicon);
+            height: var(--wicon);
+            left: 0;
+            top: calc(50% - .1rem);
+            transform: translate(0,-50%);
+            z-index: 1;
+            background: center / contain no-repeat url(../../assets/images/checked.png);
+            transition: all .3s ease;
+            opacity: 0;
+            cursor: pointer;
+        }
+        .txt{
+            font-size: 1.4rem;
+            color: var(--color-text);
+        }
+        .number{
+            font-size: 1.4rem;
+            color: var(--color-text-3);
+        }
+    }
+    &-bfaf{
+        position: relative;
+        --wicon: 1.6rem;
+        --gap: .4rem;
+        padding-left: calc(var(--wicon) + var(--gap));
+        // padding: 1.2rem;
+        position: relative;
+        display: flex;
+        align-items: center;
+        &.active{
+            &::before{
+                opacity: 0;
+            }
+            &::after{
+                opacity: 1;
+            }
+        }
+        &::before{
+            position: absolute;
+            content: '';
+            width: var(--wicon);
+            height: var(--wicon);
+            left: 0;
+            top: calc(50% - .1rem);
+            transform: translate(0,-50%);
+            z-index: 1;
+            background: center / contain no-repeat url(../../assets/images/check.png);
+            transition: all .3s ease;
+            cursor: pointer;
+        }
+        &::after{
+            position: absolute;
+            content: '';
+            width: var(--wicon);
+            height: var(--wicon);
+            left: 0;
+            top: calc(50% - .1rem);
+            transform: translate(0,-50%);
+            z-index: 1;
+            background: center / contain no-repeat url(../../assets/images/checked.png);
+            transition: all .3s ease;
+            opacity: 0;
+            cursor: pointer;
+        }
+    }
+}

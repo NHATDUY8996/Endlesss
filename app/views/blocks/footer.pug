@@ -1,0 +1,60 @@
+
+footer.footer
+    .footer-wr 
+        .container
+            .footer-bdy
+                .footer-row.row 
+                    .footer-col.col.col-5
+                        .footer-lf
+                            .header-logo
+                                a.header-logo-link.custom-logo-link(href="") 
+                                    +img("logo.png")
+                            .desc 
+                                p.txt
+                                    span  Endless Vietnam
+                                    |  - Boutique travel designers for independent souls. Curate authentic local experiences across Central Vietnam, the Highlands, and Con Dao into seamless, unscripted journeys.
+
+                    .footer-col.col.col-2
+                        .footer-rt
+                            .footer-inner-gr
+                                .footer-inner 
+                                    h4.footer-tt Explore
+                                    ul.menu-list
+                                        +menuItem('About', "", true)
+                                        +menuItem('Philosophy', "")
+                                        +menuItem('Experiences', "")
+                                        +menuItem('Destinations', "")
+                                        +menuItem('Journal', "")
+                                        +menuItem('How it works', "")
+
+                    .footer-col.col.col-4
+                        .footer-inner 
+                            h3.footer-tt CONTACT
+                            .footer-list 
+                                .footer-item 
+                                    .desc 
+                                        p.txt Email
+                                        a.link(href="") xinchao@endlessvietnam.com
+
+                                .footer-item 
+                                    .desc 
+                                        p.txt Hotline
+                                        a.link(href="") +84 972916588
+
+                                .footer-item 
+                                    .desc 
+                                        p.txt Address
+                                        a.link(href="") 24 Phan Dang Luu, Dong Son, Quang Tri, Vietnam
+
+
+        .footer-author
+            .container 
+                .footer-author-inner
+                    ul.menu-list
+                        +menuItem('Terms & Conditions', "")
+                        +menuItem('Vietnam Quizzes', "")
+                        +menuItem('FAQs', "")
+
+                    .footer-author-desc
+                        p.txt  © All Right Reserved 
+                        +img("author.png")

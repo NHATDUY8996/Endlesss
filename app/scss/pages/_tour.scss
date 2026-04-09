@@ -1,0 +1,128 @@
+.tour{
+    position: relative;
+    overflow: hidden;
+    &-bg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: -1;
+        &::before{
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 40%;
+            z-index: 1;
+            opacity: .5;
+            background: linear-gradient(180deg, #DCE5C8 0%, rgba(220, 229, 200, 0) 50%);
+        }
+        .inner{
+            width: 100%;
+            height: 100%;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+                offset-position: top center;
+            }
+        }
+    }
+    &-head{
+        @include flex-col;
+        align-items: center;
+        text-align: center;
+        gap: 1.2rem;
+        .breadcrumb{
+            padding: 0;
+            .container{
+                padding: 0;
+            }
+        }
+    }
+}
+.tourrlt{
+    position: relative;
+    overflow: hidden;
+    .swiper{
+        @include min(1200px){
+            overflow: visible;
+        }
+    }
+}
+.tourdt{
+    position: relative;
+    overflow: hidden;
+    &-head{
+        .desc{
+            text-decoration: underline;
+            text-underline-position: under;
+        }
+    }
+    &-slider{
+        position: relative;
+        width: 90.4rem;
+        max-width: 100%;
+        margin: 0 auto;
+        .swiper{
+            @include min(1200px){
+                overflow: visible;
+                &-next{
+                    transform: translate(calc(100% + 1.2rem), -50%);
+                }
+                &-prev{
+                    transform: translate(calc(-100% - 1.2rem), -50%);
+                }
+            }
+        }
+        &-gr{
+            @include flex-wr;
+            gap: 1rem;
+            align-items: center;
+            position: absolute;
+            right: 1.2rem;
+            bottom: 1.6rem;
+            z-index: 1;
+            .btn-main,
+            .swiper-pagination{
+                height: 3.8rem;
+                margin-top: 0 !important; 
+            }
+            .swiper-gr{
+                margin: 0;
+            }
+        }
+        .swiper-slide{
+            .pduct-img{
+                position: relative;
+                border-radius: 1.6rem;
+                opacity: .5;
+                transition: all .3s ease;
+                &::before{
+                    position: absolute;
+                    content: '';
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0,0,0,.5);
+                }
+                &-inner{
+                    padding-top: calc(480/904 * 100%);
+                }
+                @include hover{
+                    img{
+                        transform: translate(-50%,-50%);
+                    }
+                }
+            }
+            &-active{
+                .pduct-img{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

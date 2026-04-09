@@ -1,0 +1,29 @@
+extends layout/layout
+block vars
+    -title = 'NamePage'
+    -mainClass = 'page-template'
+    -bodyClass = ''
+    -hdClass = ''
+
+block container
+    section.sec-errorpg
+        .errorpg
+            .errorpg-bg
+                .inner
+                    +img("errorpg-bg.png")
+            .container 
+                .errorpg-wr
+                    .errorpg-bdy 
+                        .errorpg-inner
+                            p.errorpg-title(data-aos="zoom-in")
+                                +img("404.png")
+                            +ttp("Oops! We can’t find that page.",
+                                "ttcenter",
+                                "t-ctext f-pri txt-spl",
+                                "")
+                            p.desc(data-aos="fade-up") Please check the URL or return to the homepage to continue searching. If you need further assistance, please don't hesitate to contact us.
+                            .errorpg-btn(data-aos="fade-up" data-aos-delay="200")
+                                +btn("Back to Homepage","btn-sec btn-main btn-icon","","next.png","","")
+                            .errorpg-img 
+                                .inner 
+                                    +img("errorpg.png")

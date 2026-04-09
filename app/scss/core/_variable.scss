@@ -1,0 +1,124 @@
+:root {
+    --size-hd: 8rem;
+    --size-sc: 7rem;
+    --logo: 6.5rem;
+    --logoft: 25rem;
+    --wicon: 1.8rem;
+    --dist12: 1.2rem;
+    --dist16: 1.6rem;
+    --dist20: 2rem;
+    --dist24: 2.4rem;
+    --dist28: 2.8rem;
+    --dist30: 3rem;
+    --dist32: 3.2rem;
+    --dist36: 3.6rem;
+    --dist40: 4rem;
+    --dist44: 4.4rem;
+    --dist48: 4.8rem;
+    --dist56: 5.6rem;
+    --dist60: 6rem;
+    --dist62: 6.2rem;
+    --dist64: 6.4rem;
+    --dist72: 7.2rem;
+    --dist74: 7.4rem;
+    --dist76: 7.6rem;
+    --dist80: 8rem;
+    --dist96: 9.6rem;
+    --dist100: 10rem;
+    --dist120: 12rem;
+    --dist160: 16rem;
+    --ctn: 124.8rem;
+    --rectn: calc(100vw - var(--ctn));
+    --halfrectn: calc(var(--rectn)/2);
+    --serectn: calc(var(--halfrectn)/3);
+    --font-pri: 'Google Sans Flex 9pt', Sans-serif;
+    --font-sec: 'Phudu', Sans-serif;
+    --wbtn: 5.2rem;
+
+    @media (max-width: 1200px) {
+        --size-hd: 7.5rem;
+        --size-sc: 6rem;
+        --dist12: .6rem;
+        --dist16: .8rem;
+        --dist20: 1rem;
+        --dist24: 1.2rem;
+        --dist28: 1.4rem;
+        --dist30: 1.5rem;
+        --dist32: 1.6rem;
+        --dist36: 1.8rem;
+        --dist40: 2rem;
+        --dist44: 2.2rem;
+        --dist48: 2.4rem;
+        --dist56: 2.8rem;
+        --dist60: 3rem;
+        --dist62: 3.1rem;
+        --dist64: 3.2rem;
+        --dist72: 3.6rem;
+        --dist74: 3.7rem;
+        --dist76: 3.8rem;
+        --dist80: 4rem;
+        --dist96: 4.8rem;
+        --dist100: 5rem;
+        --dist120: 6rem;
+        --dist160: 8rem;
+        --wbtn: 4rem;
+    }
+
+    @media (max-width: 800px) {
+        --hd-bottom: 4.6rem;
+    }
+
+    // màu text
+    --color-pri-in: #527235;
+    --color-pri: #527235;
+    --color-second: #A9C63F;
+    --color-third: #DCE5C8;
+    --color-text: #1F2A1A;
+    --color-filt: #F4F4F4;
+    --color-disabled: #65758B;
+    --disabled: #C2C9D3;
+    --input: #418ec8;
+    //màu bg
+    --black: #000000;
+    --white: #ffffff;
+    --color-bg: #6CA651;
+    --color-bg-1: #F7F6F2;
+    --border: #8FB5CC;
+
+    --filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(2%) hue-rotate(331deg) brightness(104%) contrast(100%);
+    --filter-pri: brightness(0) saturate(100%) invert(38%) sepia(14%) saturate(1377%) hue-rotate(49deg) brightness(101%) contrast(91%);
+    --filter-sec: brightness(0) saturate(100%) invert(79%) sepia(14%) saturate(1961%) hue-rotate(26deg) brightness(96%) contrast(81%);
+    --filter-text: brightness(0) saturate(100%) invert(13%) sepia(21%) saturate(751%) hue-rotate(57deg) brightness(98%) contrast(94%);
+    --filter-disabled: brightness(0) saturate(100%) invert(45%) sepia(17%) saturate(517%) hue-rotate(176deg) brightness(96%) contrast(92%);
+    --linear: linear-gradient(92deg, rgba(221, 153, 60, 1) 0%, rgba(255, 226, 152, 1) 50%, rgba(221, 153, 60, 1) 100%);
+
+    --border-01: rgba(0, 0, 0, 0.1);
+    --border-02: rgba(0, 0, 0, 0.2);
+    --border-03: rgba(0, 0, 0, 0.3);
+    --border-04: rgba(0, 0, 0, 0.4);
+    --border-05: rgba(0, 0, 0, 0.5);
+    --border-06: rgba(0, 0, 0, 0.6);
+    --border-07: rgba(0, 0, 0, 0.7);
+    --border-08: rgba(0, 0, 0, 0.8);
+    --border-09: rgba(0, 0, 0, 0.9);
+    --border-10: rgba(255, 144, 10, 0.10);
+    --color-opa-white-01: rgba(255, 255, 255, 0.1);
+    --color-opa-white-02: rgba(255, 255, 255, 0.2);
+    --color-opa-white-03: rgba(255, 255, 255, 0.3);
+    --color-opa-white-04: rgba(255, 255, 255, 0.4);
+    --color-opa-white-05: rgba(255, 255, 255, 0.5);
+    --color-opa-white-06: rgba(255, 255, 255, 0.6);
+    --color-opa-white-07: rgba(255, 255, 255, 0.7);
+    --color-opa-white-08: rgba(255, 255, 255, 0.8);
+    --color-opa-white-09: rgba(255, 255, 255, 0.9);
+
+    // shadow
+    --shadow: 2px 4px 12px #00000014;
+}
+
+//Responsive
+$res-mobile: 1200px;
+$res-mobile-min: 1201px;
+$mobile: 500px;
+
+$cubic: cubic-bezier(0.72, 0.04, 0.49, 0.82);

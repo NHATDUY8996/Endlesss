@@ -1,0 +1,171 @@
+header.header
+    .header-wrap
+        .header-flex
+            .container
+                .header-flex-in
+                    .header-left 
+                        .menu-icon
+                            #hamburger.hd-burger
+                                .burger
+                                    .hamburger
+                                        svg.hamburgerSvg(viewBox="0 0 100 100")
+                                            path.line.line-top(d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058")
+                                            path.line.line-mid(d="M 20,50 H 80")
+                                            path.line.line-bot(d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942")
+                        a.header-cart(href="") 
+                            .icon 
+                                +img("cart.png")
+                                span.numb 3
+
+                    .header-logo
+                        a.header-logo-link.custom-logo-link(href='')
+                            +img("logo.png")
+
+                    .header-nav
+                        .menu-nav
+                            ul.menu-list
+                                +menuItem('Philosophy', '', true)
+                                +menuItem('Experiences', '')
+                                +menuItem('Destinationsn', '', false, true)
+                                    li.menu-item 
+                                        a.menu-link(href="")
+                                            +img("menu-1.jpg")
+                                            | Central Vietnam
+                                    li.menu-item 
+                                        a.menu-link(href="")
+                                            +img("menu-2.jpg")
+                                            | Central Highlands
+                                    li.menu-item 
+                                        a.menu-link(href="")
+                                            +img("menu-3.jpg")
+                                            | Con Dao Islands
+                                +menuItem('Journal', '')
+                                +menuItem('How it works', '')
+
+                    .header-action
+                        a.header-cart(href="") 
+                            .icon 
+                                +img("cart.png")
+                                span.numb 3
+                        +btn("Book a Call","btn-sec btn-main popup-open","","","button","book-call")
+
+    .mobile-overlay
+    .mobile
+        .mobile-bg 
+            +img("menu-bg.jpg")
+        .mobile-con
+            .mobile-wr
+                .mobile-nav
+                    .menu-nav
+                        ul.menu-list
+                            +menuItem('Philosophy', '', true)
+                            +menuItem('Experiences', '')
+                            +menuItem('Destinationsn', '', false, true)
+                                li.menu-item 
+                                    a.menu-link(href="")
+                                        +img("menu-1.jpg")
+                                        | Central Vietnam
+                                li.menu-item 
+                                    a.menu-link(href="")
+                                        +img("menu-2.jpg")
+                                        | Central Highlands
+                                li.menu-item 
+                                    a.menu-link(href="")
+                                        +img("menu-3.jpg")
+                                        | Con Dao Islands
+                            +menuItem('Journal', '')
+                            +menuItem('How it works', '')
+
+
+        .mobile-mxh
+            h3.mobile-title
+                | Theo dõi chúng tôi trên
+            +social("",[{images: "social-1.png"},{images: "social-2.png"},{images: "social-3.png"},{images: "social-4.png"},{images: "social-5.png"}],"")
+
+    +popup("popup-success","book-success","fa-solid fa-xmark")
+        .success
+            .success-img 
+                +img("success.png")
+            .success-desc 
+                h3.title-pri.t-cpri.f-pri.t-upper Success! Your Journey Starts Here.
+                .desc Thank you for reaching out. We’ve received your details. Mo is now reviewing your travel vision to see how we can best craft an experience that resonates with your soul.
+                +btn("Back to Home","btn-sec btn-icon btn-main","","next.png","","")
+
+
+    +popup("bookcall","book-call","fa-solid fa-xmark")
+        .ctact-frm 
+            form(action="")
+                .ctact-frm-inner 
+                    .ctact-frm-head 
+                        p.title-tag CONTACT FORM
+                        +ttp("Start the Conversation",
+                            "",
+                            "t-cpri t-upper f-pri txt-spl",
+                            "")
+                        p.desc After you share your context, we’ll start crafting the magic.
+                    .ctact-frm-bdy 
+                        .frm-row.row 
+                            .frm-col.col.col-6
+                                .frm-item 
+                                    .frm-ip
+                                        input.frm-input(type="text" placeholder="First name*")
+                            .frm-col.col.col-6
+                                .frm-item 
+                                    .frm-ip
+                                        input.frm-input(type="text" placeholder="Last name*")
+                            .frm-col.col.col-6
+                                .frm-item 
+                                    .frm-ip
+                                        input.frm-input(type="tel" placeholder="Your phone number*")
+                            .frm-col.col.col-6
+                                .frm-item 
+                                    .frm-ip
+                                        input.frm-input(type="email" placeholder="Your email*")
+                            .frm-col.col
+                                .frm-item 
+                                    .frm-ip
+                                        .dateTime(data-type="single")
+                                            .dateTimeItem.dateFrom
+                                                .dateTimeText
+                                                    | ngày/tháng/năm
+                                                input.dateTimeInput(type="text" name="arrivaldate" placeholder="") 
+                                                .icon
+                                                    +img("date.png")
+                            .frm-col.col
+                                .frm-item 
+                                    label.frm-lb Choose your wanted destinations*
+                                    .frm-recheck 
+                                        - 
+                                            const destinations = ["Phong Nha", "Hue", "Hoi An", "Khe Sanh", "Central Highlands", "Con Dao"];
+                                        each des in destinations
+                                            .recheck-item
+                                                input.recheck-input(type="checkbox" id=`check-${des}`)
+                                                label.recheck-des(for=`check-${des}`) #{des}
+                            .frm-col.col
+                                .frm-item 
+                                    label.frm-lb Who are you traveling with?*
+                                    .frm-recheck 
+                                        - 
+                                            const travelers = ["Family", "Friends", "Partner", "My own"];
+                                        each traveler in travelers
+                                            .recheck-item
+                                                input.recheck-input(type="checkbox" id=`check-${traveler}`)
+                                                label.recheck-des(for=`check-${traveler}`) #{traveler}
+                            .frm-col.col
+                                .frm-item 
+                                    label.frm-lb What would you like to do? *
+                                    .frm-recheck 
+                                        - 
+                                            const activities = ["Nature & Scenery", "Activities & Sports", "Relaxing & Wellness", "Culture & Rural life"];
+                                        each activity in activities
+                                            .recheck-item
+                                                input.recheck-input(type="checkbox" id=`check-${activity}`)
+                                                label.recheck-des(for=`check-${activity}`) #{activity}
+
+                            .frm-col.col
+                                .frm-item
+                                    .frm-ip
+                                        textarea.frm-input(rows="5" placeholder="Message")
+                        .ctact-btn 
+                            +btn("Send message","btn-sec btn-icon btn-main","","next.png","","")
+                            p.desc *Average design time: 24 hours 

@@ -1,0 +1,236 @@
+.title {
+    &-tag {
+        font-weight: 600;
+        @include fz-24;
+        color: var(--color-second);
+        line-height: 150%;
+    }
+
+    &.t-cwhite {
+
+        .tag,
+        .txt {
+            color: var(--color-text);
+        }
+    }
+
+    .txt {
+        @include fz-18;
+        font-family: var(--font-pri);
+        color: var(--color-text-2);
+        font-weight: 500;
+
+        span {
+            // color: var(--color-pri);
+            font-weight: 700;
+        }
+    }
+
+    &-decor {
+        --wdc: 4.8rem;
+        width: var(--wdc);
+        height: var(--wdc);
+        @include mid-flex;
+        animation: shake 1s ease-in-out infinite;
+        transform-origin: center bottom;
+
+        img {
+            @include imgct;
+        }
+    }
+
+    .title-sec {
+        @include fz-48;
+        font-weight: 700;
+        color: #101211;
+
+        &.t-dcor {
+            span {
+                color: #EF4444;
+            }
+        }
+
+        &.decor {
+            span {
+                padding: .4rem 1.6rem;
+                position: relative;
+                color: var(--color-text);
+                z-index: 1;
+                transition: all .3s ease;
+                display: inline-block;
+                line-height: 1.3;
+
+                &::before {
+                    position: absolute;
+                    content: '';
+                    left: 0;
+                    width: 0;
+                    top: 0;
+                    height: 100%;
+                    border-radius: .6rem;
+                    background-color: #6C2E14;
+                    z-index: -1;
+                    transition: all .3s linear;
+                }
+
+                @include max(1200px) {
+                    color: var(--white);
+
+                    &::before {
+                        width: 100%;
+                    }
+                }
+            }
+
+        }
+
+        &.pri {
+            span {
+                &::before {
+                    background-color: var(--color-pri);
+                }
+            }
+        }
+
+        &.hot {
+            span {
+                &::before {
+                    background-color: #EF4444;
+                }
+            }
+        }
+
+        &.is-inview {
+            &.decor {
+                span {
+                    color: var(--white);
+
+                    &::before {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        &.f-sec {
+            @include fz-32;
+        }
+    }
+}
+
+.ttcenter {
+    width: 110rem;
+    max-width: 100%;
+    margin: auto;
+    @include flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+.title-pri {
+    position: relative;
+    @include fz-64;
+    font-weight: 700;
+    font-family: var(--font-sec);
+    text-wrap: balance;
+    line-height: 130%;
+    overflow: visible;
+    z-index: 1;
+
+    @include max(1199px) {
+        @include fz-36;
+    }
+    .title-span{
+        color: var(--color-second);
+    }
+    &.txt-spl .word {
+        line-height: 1.3;
+    }
+
+    &.t-decor {
+        span {
+            position: relative;
+            color: var(--color-second);
+        }
+    }
+    &.f-100{
+        @include fz-100;
+    }
+    &.f-pri {
+        @include fz-40;
+    }
+
+    &.f-sec {
+        @include fz-36;
+    }
+
+    &.f-thr {
+        @include fz-32;
+    }
+
+    &.f-four {
+        @include fz-28;
+    }
+
+    &.f-title {
+        @include fz-72;
+    }
+
+    &.t-pri {
+        span {
+            color: var(--color-pri);
+        }
+    }
+
+    &.t-sec {
+        color: var(--color-second);
+        span {
+            color: var(--color-second);
+        }
+    }
+
+    &.t-thr {
+        span {
+            color: var(--color-third);
+        }
+    }
+
+    &.f-banner {
+        @include fz-60;
+        font-weight: 700;
+    }
+
+    &.ttsec {
+        span {
+            color: var(--color-second);
+        }
+    }
+}
+
+.title-head {
+    @include flex-col;
+    align-items: center;
+    text-align: center;
+    gap: .6rem;
+    max-width: 90rem;
+    margin: 0 auto 4rem;
+
+    @include max(768px) {
+        margin-bottom: 2.4rem;
+    }
+    &.title-left{
+        align-items: flex-start;
+        text-align: left;
+        max-width: 100%;
+        @include max(768px){
+            align-items: center;
+            text-align: center;
+        }
+    }
+    .desc{
+        @include fz-20;
+        max-width: 60rem;
+    }
+}

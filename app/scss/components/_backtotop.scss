@@ -1,0 +1,167 @@
+.back-to-top {
+    width: var(--wbtn);
+    height: var(--wbtn);
+    border-radius: 100%;
+    background-color: var(--color-bg);
+    border: .1rem solid var(--color-bg);
+    position: fixed;
+    bottom: 4rem;
+    right: 3.2rem;
+    z-index: 11;
+    transform: translateX(3rem);
+    opacity: 0;
+    transition: 0.5s linear;
+    cursor: pointer;
+    visibility: hidden;
+    @include mid-flex;
+    overflow: hidden;
+    @include fz-20;
+    box-shadow: var(--shadow);
+
+    @include max(1200px) {
+        right: 2rem;
+    }
+
+    @include max(768px) {
+        right: 1.2rem;
+        bottom: 7rem;
+    }
+
+    &::before {
+        position: absolute;
+        content: '';
+        inset: 0;
+        background-color: var(--white);
+        z-index: -1;
+        transition: all .45s ease;
+        border-radius: 100%;
+        transform: scale(0);
+    }
+
+
+    @include hover {
+        &::before {
+            transform: scale(1.5)
+        }
+
+        i {
+            color: #4AA3E0;
+        }
+    }
+
+    i {
+        color: var(--white);
+    }
+
+
+    &.active {
+        visibility: visible;
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    svg {
+        width: 2.4rem;
+        z-index: 1;
+        animation: animate-svg 2s ease infinite;
+
+        @include max(1200px) {
+            width: 1.8rem;
+        }
+
+        @include max(768px) {
+            width: 1.6rem;
+        }
+
+        path {
+            transition: all .3s ease;
+        }
+    }
+    .icon{
+        width: 100%;
+        height: 100%;
+        @include mid-flex;
+        animation: btt-up 2s ease infinite;
+        &:nth-child(2){
+            position: absolute;
+            inset: 0;
+            animation: btt-up1 2s ease infinite;
+        }
+        &:nth-child(3){
+            position: absolute;
+            inset: 0;
+            animation: btt-up2 2s ease infinite;
+        }
+    }
+    @include hover {
+        svg {
+            path {
+                stroke: var(--color-pri);
+            }
+        }
+    }
+}
+@keyframes btt-up {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(-200%);
+    }
+}
+@keyframes btt-up1 {
+    0% {
+        transform: translateY(100%);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+@keyframes btt-up2 {
+    0% {
+        transform: translateY(150%);
+    }
+    50% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+.fbtn {
+    position: fixed;
+    z-index: 10;
+    @include flex-col;
+    gap: .8rem;
+    align-items: center;
+    right: 3.2rem;
+    bottom: calc(var(--wbtn) + 4.8rem );
+
+    @include max(1200px) {
+        right: 2rem;
+        bottom: calc(var(--wbtn) + 5.4rem);
+    }
+
+    @include max(768px) {
+        right: 1.2rem;
+        bottom: calc(var(--wbtn) + 8rem);
+    }
+    &-link{
+        width: var(--wbtn);
+        height: var(--wbtn);
+        @include mid-flex;
+        filter: drop-shadow(0 0 .1rem rgba(0,0,0,.2));
+        transition: all .3s ease;
+        cursor: pointer;
+        animation: phone-fn 2s ease infinite;
+        img{
+            @include imgct;
+        }
+    }
+}

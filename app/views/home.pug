@@ -1,0 +1,272 @@
+extends layout/layout
+block vars
+    -title = 'NamePage'
+    -mainClass = 'page-home'
+    -bodyClass = ''
+    -hdClass = ''
+
+block container
+    section.sec-bnh 
+        .bnh.add-class
+            .bnh-slider
+                +swiper()
+                    each val in Array(5)
+                        .swiper-slide
+                            .bnh-img 
+                                .bnh-img-inner 
+                                    +img("bnh.jpg")
+            .bnh-swiper 
+                +swiper()
+                    each val in Array(5)
+                        .swiper-slide 
+                            .container
+                                .bnh-desc 
+                                    .bnh-desc-inner
+                                        .bnh-head(data-swiper-parallax-x="-300" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="1000")
+                                            +ttp("Vietnam, Unhurried and Unscripted",
+                                                "",
+                                            "t-cwhite t-upper txt-spl",
+                                            "")
+                                        .bnh-content(data-swiper-parallax-x="-600" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="1000")
+                                            .mona-content
+                                                p Bespoke travel design for the independent souls. We don’t sell tours; we curate your personal story in Central Vietnam, the Highlands, and Con Dao
+                                        .bnh-gr(data-swiper-parallax-x="-600" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="1000")
+                                            .bnh-btn
+                                                +btn("Start Building Your Journey","btn-sec btn-icon btn-main","","next.png","","")
+
+                .swiper-pagination 
+
+
+    section.sec-storyh 
+        .storyh
+            .storyh-bg 
+                .inner 
+                    +img("storyh-bg.jpg")
+            .container
+                .storyh-wr
+                    .storyh-head.title-head 
+                        p.title-tag(data-aos="zoom-in") OUR STORY
+                        +ttp("Endless Vietnam is more than a travel service — it’s a gateway to the quieter, deeper side of Vietnam.",
+                            "",
+                            "t-cpri f-pri t-upper txt-spl",
+                            "")
+                        p.desc(data-aos="fade-up" data-aos-delay="200") Endless Vietnam was born from a simple belief: the most meaningful journeys happen off the main tourist trail. Founded by Mo, a travel designer from Quảng Bình, Endless Vietnam curates personal journeys across Central Vietnam, the Highlands, and remote coastal regions. Instead of mass itineraries, we connect travelers with local guides, family-run homestays, and authentic cultural experiences.
+
+                        .storyh-gr(data-aos="fade-up" data-aos-delay="400")
+                            +btn("See Our Philosophy","btn-sec btn-icon btn-main","","next.png","","")
+                            span.txt OR
+                            a.storyh-link(href="") How It Works: From Pieces to Journey
+
+                    .storyh-row.row.row-3
+                        .storyh-col.col.col-4(data-aos="fade-up" data-aos-delay="200")
+                            .storyh-item
+                                h3.tt The Specialist
+                                p.desc We focus on three regions we know intimately. No generic routes, just deep local expertise.
+                        .storyh-col.col.col-4(data-aos="fade-up" data-aos-delay="400")
+                            .storyh-item
+                                h3.tt Designed for Solos & Independent travelers
+                                p.desc Safe, sophisticated, and flexible. We solve the logistics so you can focus on the discovery.
+
+                        .storyh-col.col.col-4(data-aos="fade-up" data-aos-delay="600")
+                            .storyh-item
+                                h3.tt Human Connection
+                                p.desc Your safety net in Central Vietnam. From private drivers who feel like family to 24/7 virtual support.
+
+
+
+    section.sec-ourh 
+        .ourh.pd-100
+            .ourh-bg 
+                .inner 
+                    +img("ourh-bg.jpg")
+            .container 
+                .ourh-wr 
+                    .ourh-head.title-head 
+                        p.title-tag(data-aos="zoom-in") OUR DESTINATIONS
+                        +ttp("Build Your Journey",
+                            "",
+                            "t-cwhite t-upper txt-spl",
+                            "")
+                        p.desc(data-aos="fade-up" data-aos-delay="200") Choose the landscapes that speak to you. Each region offers a different side of Vietnam.
+                    .ourh-bdy 
+                        .ourh-row.row.move-item(data-move="100")
+                            .ourh-col.col.col-6 
+                                .ourh-item(data-aos="zoom-in-down") 
+                                    .ourh-desc 
+                                        .ourh-desc-inner 
+                                            p.tag The Heritage & Cave Heart
+                                            h3.ourh-tt Central Vietnam
+                                            p.desc Explore world-class caves in Phong Nha, Hue’s imperial heritage, and the timeless, lantern-lit charm of Hoi An.
+                                        .ourh-btn 
+                                            +btn("Explore Central Vietnam","btn-pri btn-icon btn-main","","next.png","","")
+                                    .ourh-img 
+                                        .ourh-img-inner 
+                                            +img("ourh-1.jpg")
+                            .ourh-col.col.col-6 
+                                .ourh-item(data-aos="zoom-in-down") 
+                                    .ourh-desc 
+                                        .ourh-desc-inner 
+                                            p.tag The Mist & Coffee Trails
+                                            h3.ourh-tt Central Highlands
+                                            p.desc Discover rugged waterfalls, ethnic cultures, and misty coffee plantations in Vietnam’s wild, authentic heartland.
+                                        .ourh-btn 
+                                            +btn("Discover the Highlands","btn-pri btn-icon btn-main","","next.png","","")
+                                    .ourh-img 
+                                        .ourh-img-inner 
+                                            +img("ourh-2.jpg")
+                            .ourh-col.col.col-6 
+                                .ourh-item(data-aos="zoom-in-down") 
+                                    .ourh-desc 
+                                        .ourh-desc-inner 
+                                            p.tag The Untouched Sanctuary
+                                            h3.ourh-tt Con Dao Islands
+                                            p.desc A serene sanctuary of crystal waters and colonial history—the ultimate escape for the independent soul.
+                                        .ourh-btn 
+                                            +btn("Explore Con Dao","btn-pri btn-icon btn-main","","next.png","","")
+                                    .ourh-img 
+                                        .ourh-img-inner 
+                                            +img("ourh-3.jpg")
+
+        .exph.mb-100
+            .container 
+                .exph-wr 
+                    .exph-bdy 
+                        .exph-head.title-head.mb-56
+                            p.title-tag(data-aos="zoom-in") Featured Tours
+                            +ttp("Curated Experiences",
+                                "",
+                                "t-cpri t-upper txt-spl",
+                                "")
+                            +filterSlider("", [
+                                {txt: "All Tours"},
+                                {txt: "Central Vietnam"},
+                                {txt: "Central Highlands"},
+                                {txt: "Con Dao Islands"},
+                            ])
+                        .exph-bdy 
+                            .exph-row.row.row-3
+                                - 
+                                    const arrs = [
+                                        {
+                                        imgtag: "Quang Tri",
+                                        img: "pduct-1.jpg",
+                                        tag: "Phong Nha Local Guide Collective",
+                                        title: "Phong Nha Sunset & Cave Adventure"},
+                                        {
+                                        imgtag: "Da Nang",
+                                        img: "pduct-2.jpg",
+                                        tag: "Pineapple Lantern Workshop",
+                                        title: "Hoi An Lantern Craft & Old Town Walk"
+                                        },
+                                        {
+                                        imgtag: "Hue",
+                                        img: "pduct-3.jpg",
+                                        tag: "Hue Local Riders",
+                                        title: "Hue Street Food & Heritage Ride"
+                                        },
+                                        {
+                                        imgtag: "Quang Tri",
+                                        img: "pduct-4.jpg", 
+                                        tag: "Netin Travel",
+                                        title: "Historical Dong Hoi: From War to Peace"
+                                        },
+                                        {
+                                        imgtag: "Ho Chi Minh City",
+                                        img: "pduct-5.jpg",
+                                        tag: "Con Dao Dive Center",
+                                        title: "Diving the Coral Reefs of Bay Canh"
+                                        },
+                                        {
+                                        imgtag: "Dak Lak",
+                                        img: "pduct-6.jpg",
+                                        tag: "Lak Tented Camp",
+                                        title: "Gong Culture & Coffee Harvest Workshop"
+                                        }
+                                    ]
+                                each arr in arrs
+                                    .exph-col.col.col-4(data-aos="fade-up" data-aos-delay="200")
+                                        .pduct
+                                            .pduct-img 
+                                                .pduct-img-inner 
+                                                    +img(arr.img)
+                                            .pduct-tag
+                                                p.tag
+                                                    +img("location.png")
+                                                    = arr.imgtag
+                                            .pduct-desc
+                                                .pduct-desc-inner
+                                                    p.pduct-desc-tag= arr.tag
+                                                    h3.pduct-tt
+                                                        a.link(href="")= arr.title
+                                                    ul.pduct-list 
+                                                        li.pduct-item
+                                                            span.txt Adult 
+                                                                span.text 
+                                                                    span.bold  $95
+                                                                    |/person
+                                                        li.pduct-item
+                                                            span.txt Child 
+                                                                span.text
+                                                                    span.bold  $75
+                                                                    |/person
+                                                .pduct-btn
+                                                    +btn("Explore the Tour","btn-pri btn-icon btn-main","","next.png","","")
+
+
+                            +pagination()
+                            .exph-btn(data-aos="fade-up" data-aos-delay="400")
+                                +btn("See all Tours","btn-sec btn-icon btn-main","","next.png","","")
+
+    section.sec-infoh 
+        .infoh
+            .infoh-bg 
+                .inner 
+                    +img("infoh-bg.jpg")
+            .container 
+                .infoh-wr 
+                    .infoh-bdy 
+                        .infoh-row 
+                            .infoh-lf.col-6
+                                .infoh-img
+                                    .infoh-img-inner 
+                                        +img("infoh.png")
+                            .infoh-rt.col-6
+                                .infoh-desc.move-item(data-move="150")
+                                    p.title-tag(data-aos="fade-up") ABOUT ENDLESS VIETNAM
+                                    +ttp("Meet your Designer",
+                                        "",
+                                        "t-cpri t-upper txt-spl",
+                                        "")
+                                    .desc.mona-content(data-aos="fade-up" data-aos-delay="200")
+                                        p Hi, I'm Mơ. I believe travel should be as unique as the person taking it. After years of working as a travel consultant, spending nights in the majestic caves in Phong Nha, exploring hidden corners of the Highlands, and the quiet shores of Con Dao, I created Endless Vietnam to share the 'real' Vietnam—the one that doesn't show up on a mass-tour bus.
+                                    .infoh-btn(data-aos="fade-up" data-aos-delay="400")
+                                        +btn("Learn about","btn-sec btn-icon btn-main","","next.png","","")
+
+    section.sec-faqs 
+        .faqs.pd-100
+            .faqs-bg
+                .inner
+                    +img("faqs-bg.jpg")
+            .container 
+                .faqs-wr 
+                    .faqs-head.title-head 
+                        p.title-tag(data-aos="zoom-in") FAQs
+                        +ttp("Frequently Asked Questions",
+                            "",
+                            "t-cpri t-upper txt-spl",
+                            "")
+                    .faqs-bdy.collapse-block(data-aos="fade-up")
+                        .faqs-list
+                            each val,index in Array(5)
+                                .faqs-item.collapse-item
+                                    .head.collapse-head 
+                                        .icon 
+                                            +img("faqs-icon.png")
+                                        .plus
+                                    h3.tt Is Endless Vietnam a travel agency?
+                                    .faqs-content.collapse-body 
+                                        .mona-content 
+                                            p While we focus on designing complete journeys, you can certainly start with one experience. However, the true "Endless Vietnam" magic happens when we design the flow between them for you.
+
+
+    +thumb()

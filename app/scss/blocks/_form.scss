@@ -1,0 +1,504 @@
+textarea {
+    width: 100% !important;
+    resize: none;
+}
+
+.wpcf7 form .wpcf7-spinner {
+    margin: 0 !important;
+    left: 50%;
+    top: 50%;
+    bottom: auto !important;
+    transform: translate(-50%, -50%);
+}
+
+.frm {
+    &-row {
+        --cgap: 1.6rem;
+        --rgap: 1.6rem;
+    }
+
+    &-col {
+        @include max(500px) {
+            width: 100%;
+        }
+        &.colcus{
+            .frm-item{
+                flex-direction: row;
+                justify-content: space-between;
+                flex-wrap: wrap
+            }
+            .frm-lb{
+                width: fit-content;
+            }
+        }
+    }
+    &-search{
+        @include flex;
+        align-items: center;
+        padding: 0 2rem;
+        background-color: var(--white);
+        border: .1rem solid var(--border-1);
+        border-radius: 4rem;
+        &-btn{
+            width: 2rem;
+        }
+        input{
+            flex: 1;
+            height: var(--wbtn);
+            outline: none;
+            width: 100%;
+            padding:0 1.2rem;
+            @include fz-16;
+            @include fontpri;
+            color: var(--color-text);
+            font-weight: 500;
+            transition: all .3s ease;
+            border: none;
+            &::placeholder{
+                color: var(--border);
+            }
+        }
+    }
+    &-item {
+        @include flex;
+        flex-direction: column;
+        gap: .8rem;
+        position: relative;
+        --height: 4rem;
+        @include max(800px) {
+            gap: .4rem;
+        }
+
+        textarea {
+            height: auto !important;
+        }
+
+        textarea,
+        input {
+            width: 100%;
+            font-size: 1.6rem;
+            color: var(--color-text);
+            @include fontpri;
+            font-weight: 700;
+            outline: none;
+            padding: .8rem 1.6rem;
+            height: var(--height);
+            background-color: var(--color-third);
+            @include max(1199px){
+                padding: .8rem 1.2rem;
+            }
+            &::placeholder {
+                font-size: 1.6rem;
+                color: var(--color-pri);
+                @include fontpri;
+                font-weight: 400;
+                line-height: 150%;
+            }
+        }
+        .dateTime {
+            position: relative;
+            padding: .8rem 1.6rem;
+            height: var(--height);
+            width: 100%;
+            color: var(--color-pri);
+            input {
+                display: none !important;
+                pointer-events: none;
+            }
+            .dateTimeItem {
+                height: 100%;
+                @include flex;
+                align-items: center;
+            }
+            .dateTimeText {
+                font-size: 1.6rem;
+                font-weight: normal;
+                flex: 1;
+                @include max(800px) {
+                    font-size: 1.4rem;
+                }
+
+                &.disable {
+                    color: var(--color-text);
+                    font-weight: 500;
+                }
+            }
+
+            .icon {
+                width: 1.8rem;
+                height: 1.8rem;
+                @include mid-flex;
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translate(0, -50%);
+                cursor: pointer;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                    display: block;
+                }
+            }
+        }
+        .wpcf7-not-valid-tip {
+            font-size: 1.2rem !important;
+
+        }
+
+        &.valid,
+        &.focus {
+            .form-lb {
+                
+            }
+        }
+    }
+    &-recheck{
+        position: relative;
+        @include flex-wr;
+        gap: 1.6rem;
+        .recheck-input{
+            display: none;
+        }
+        .recheck-item{
+            &.active{
+                .recheck-des{
+                    &::after{
+                        opacity: 1;
+                    }
+                }
+            }
+            .recheck-input:checked{
+                & ~ .recheck-des{
+                    &::after{
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        .recheck-des{
+            position: relative;
+            --wicon: 1.6rem;
+            padding-left: calc(var(--wicon) + .8rem);
+            cursor: pointer;
+            &::before{
+                position: absolute;
+                content: '';
+                width: var(--wicon);
+                height: var(--wicon);
+                left: 0;
+                top: calc(50% - .1rem);
+                transform: translate(0,-50%);
+                z-index: 1;
+                background: url(../assets/images/check.png) center / contain no-repeat;
+                transition: all .3s ease;
+                cursor: pointer;
+            }
+            &::after{
+                position: absolute;
+                content: '';
+                width: var(--wicon);
+                height: var(--wicon);
+                left: 0;
+                top: calc(50% - .1rem);
+                transform: translate(0,-50%);
+                z-index: 1;
+                background:  url(../assets/images/checked.png) center / contain no-repeat;
+                transition: all .3s ease;
+                opacity: 0;
+                cursor: pointer;
+            }
+        }
+    }
+    &-ip {
+        position: relative;
+        border-radius: 0 !important;
+        background-color: var(--color-third);
+        border-bottom: 2.5px solid var(--color-second);
+        @include flex;
+        align-items: center;
+        &.radiussec{
+            border-radius: 1.2rem !important;
+        }
+        .wpcf7-form-control-wrap {
+            height: 100%;
+            display: block;
+            width: 100%;
+        }
+        &.file-Area{
+            .wpcf7-form-control-wrap{
+                position: absolute;
+                inset: 0;
+                pointer-events: none;
+                z-index: 1;
+            }
+        }
+        .icon{
+            width: 2.4rem;
+            height: 2.4rem;
+            @include mid-flex;
+            background-color: var(--white);
+            margin-right: 1rem;
+            cursor: pointer;
+            color: #8FB5CC;
+        }
+        .ic-down {
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%) rotate(0);
+            right: 0;
+            width: 2rem;
+            height: 2rem;
+            pointer-events: none;
+            @include flex;
+            transition: all .3s ease;
+
+            &.active {
+                transform: translate(0, -50%) rotate(180deg);
+            }
+
+            img {
+                width: 100%;
+                display: block;
+                object-fit: contain;
+            }
+        }
+
+        textarea {}
+    }
+
+    &-input {
+        flex: 1;
+        height: var(--wbtn);
+        outline: none;
+        width: 100%;
+        display: block;
+        padding: .8rem 1.2rem;
+        @include fz-16;
+        font-weight: 700;
+        @include fontpri;
+        transition: all .3s ease;
+        border: none;
+
+        &:not(:placeholder-shown),
+        &:focus {
+            border-color: var(--color-pri);
+        }
+    }
+
+    &-lb {
+        color: var(--color-text);
+        font-weight: 700;
+        @include fontpri;
+        @include fz-16;
+        text-transform: capitalize;
+        pointer-events: none;
+        transition: all .3s ease;
+        width: 100%;
+        z-index: 1;
+
+        &.speci {
+            &::after {
+                content: '*';
+                color: red;
+            }
+        }
+    }
+}
+.upload-file{
+    cursor: pointer;
+    input{
+        display: none;
+        pointer-events: none;
+    }
+}
+.main{
+    .wpcf7 form{
+        .wpcf7-response-output{
+            margin: 2em 0 1em !important;
+            font-size: 1.4rem !important;
+            @include max(768px){
+                font-size: 1.2rem !important;
+            }
+        }
+    }
+}
+input:-webkit-autofill{
+    box-shadow: unset !important;
+}
+.frm-upload{
+    padding: 2.4rem;
+    @include flex-col;
+    align-items: center;
+    width: 100%;
+    gap: 1.2rem;
+    text-align: center;
+    @include max(1200px){
+        padding: 1.6rem;
+    }
+    img{
+        @include icon(4.8rem);
+        object-fit: cover;
+    }
+    .txt {
+        opacity: .3;
+    }
+    .text{
+        font-size: 1.1rem;
+        opacity: .3;
+    }
+}
+.frm-row .wpcf7-not-valid-tip {
+    position: absolute !important;
+    z-index: 2;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    background: red;
+    color: #fff;
+    pointer-events: none;
+    padding: .5rem;
+    right: 0;
+    font-weight: 500;
+    line-height: 120%;
+    bottom: auto;
+    top: 99%;
+    border-radius: .4rem;
+    &::before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-left: 0.5rem solid transparent;
+        border-right: 0.5rem solid transparent;
+        border-bottom: 0.5rem solid red;
+        bottom: 100%;
+        right: 1.6rem;
+    }
+}
+
+.coupon-error-notice {
+    background-color: #fff5f5; /* Nền hồng nhạt */
+    color: #c53030;            /* Chữ đỏ đậm */
+    border: 1px solid #feb2b2; /* Viền đỏ nhạt */
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Thêm một cái icon "!" phía trước cho chuyên nghiệp */
+.coupon-error-notice::before {
+    content: "⚠️";
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.message-container.alert-color {
+    margin-top: 1.6rem;
+}
+.message-container.alert-color {
+    background-color: #fff5f5; /* Nền hồng nhạt cực nhẹ */
+    color: #d63031;            /* Màu chữ đỏ hiện đại */
+    border: 1px solid #fab1a0; /* Viền cam đỏ nhẹ */
+    border-radius: 8px;        /* Bo góc */
+    padding: .6rem 1.2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Đổ bóng nhẹ cho nổi bật */
+    font-size: 1.2rem;
+    a{
+        color: var(--color-text);
+        text-decoration: underline;
+    }
+}
+.message-container{
+    width: fit-content !important;
+    max-width: 100%;
+}
+/* Tùy chỉnh chữ "Lỗi:" */
+.message-container.alert-color strong {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Tùy chỉnh icon đóng (X) */
+.message-container .message-icon {
+    display: none;
+}
+
+/* Khung bao ngoài cùng */
+.woocommerce-message.message-wrapper {
+    border: none !important; /* Bỏ viền mặc định */
+    background: transparent !important;
+    padding: 10px 0 !important;
+}
+.woocommerce-notices-wrapper {
+    max-width: 92rem;
+    margin: 0 auto;
+    @include min(1200px){
+        opacity: 0;
+        transform: translateX(3rem);
+        animation: 1s notices .5s cubic-bezier(.2,.8,.2,1) forwards;
+    }
+}
+
+@keyframes notices {
+    from {
+        opacity: 0;
+        transform: translateX(3rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .woocommerce-notices-wrapper {
+        animation: none !important;
+    }
+}
+/* Khung nội dung chính */
+.message-container.success-color {
+    background-color: #ffffff !important; /* Nền trắng sạch sẽ */
+    color: #2d3436 !important;            /* Chữ xám đậm dễ đọc */
+    border-left: 5px solid #2ecc71 !important; /* Thanh nhấn màu xanh lá */
+    border-radius: 8px !important;
+    padding: .6rem 1.6rem !important;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.1) !important; /* Đổ bóng sâu */
+    display: flex !important;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .6rem;
+}
+
+/* Icon checkmark */
+.message-container .icon-checkmark {
+    color: #2ecc71 !important;
+    font-size: 20px;
+}
+
+/* Tùy chỉnh nút "Xem giỏ hàng" */
+.message-container .button.wc-forward {
+    background-color: var(--color-pri) !important; /* Màu xanh đồng bộ */
+    color: var(--color-text) !important;
+    border-radius: 4px !important;
+    text-transform: none !important;      /* Bỏ viết hoa toàn bộ */
+    font-weight: 600 !important;
+    padding: 8px 15px !important;
+    transition: all 0.3s ease;
+}
+
+.message-container .button.wc-forward:hover {
+    box-shadow: 0 4px 10px rgba(46, 204, 113, 0.3);
+}
+.aupthpa{
+    .message-container{
+        margin-top: 0 !important;
+    }
+}

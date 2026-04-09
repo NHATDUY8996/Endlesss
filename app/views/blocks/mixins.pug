@@ -1,0 +1,249 @@
+mixin img(name)
+    img(src="./assets/images/" + name, alt="")
+
+mixin menuItem(text, href, current=false, dropdown=false)
+    li.menu-item(class=current ? 'current-menu-item' : '', class=dropdown ? 'dropdown' : '')
+        a.menu-link(href=href)= text
+        if dropdown
+            ul.menu-list
+                block
+
+mixin btn(name, classbtn, classIcon, img, button, datapop)
+    if button !== "button"
+        a(class=classbtn href="#")
+            span.txt #{name}
+            if classIcon || img
+                .icon
+                    if classIcon
+                        i(class=classIcon)
+                    if img
+                        +img(img)
+    else
+        button(type="submit" class=classbtn data-popup=datapop ? datapop : null)
+            span.txt #{name}
+            if classIcon || img
+                .icon
+                    if classIcon
+                        i(class=classIcon)
+                    if img
+                        +img(img)
+
+mixin social(txt, arr,dataaos)
+    .social(data-aos=dataaos)
+        if txt
+            p.txt= txt
+        ul.social-list
+            each arrs in arr
+                li.social-item
+                    a.social-link(href="#")
+                        +img(arrs.images)
+
+mixin pagination(classCustom)
+    .pagi-pri(class= classCustom)
+        .pagination
+            .pagination-mona
+                ul.page-numbers
+                    li
+                        a.page-numbers.prev(href="")
+                            i.fa-regular.fa-chevron-left
+                    li
+                        a.page-numbers.current(href="") 1
+                    li
+                        a.page-numbers(href="") 2
+                    li
+                        a.page-numbers.dot= '...'
+                    li
+                        a.page-numbers(href="") 4
+                    li
+                        a.page-numbers(href="") 5
+                    li
+                        a.page-numbers.next(href="")
+                            i.fa-regular.fa-chevron-right
+
+mixin breadCrumb(arr)
+    .breadcrumb
+        .container.secctn
+            .breadcrumb-wrapper
+                ul.breadcrumb-list
+                    li.breadcrumb-item(data-aos="fade-right")
+                        a.breadcrumb-link(href="")
+                            | Homepage
+                    each arrs in arr
+                        li.breadcrumb-item(data-aos="fade-right")
+                            a.breadcrumb-link(href="") #{arrs.txt}
+
+mixin ttp(text, classtt, classCustom, dataaos)
+    - const hasSpl = classCustom && classCustom.includes('txt-spl')
+    .title(class=classtt)
+        h2.title-pri(
+            class=classCustom,
+            data-aos=dataaos || undefined,
+            data-spl=hasSpl ? "" : undefined
+        )!= text
+
+
+mixin popup(classCustom,datapopupid,classicon)
+    .popup(class=classCustom, data-popup-id=datapopupid)
+        .popup-overlay
+        .popup-main
+            .popup-close
+                .icon
+                    if classicon
+                        i(class= classicon)
+
+            .popup-main-wrapper
+                .popup-over
+                    .popup-wrapper
+                        block
+
+
+mixin filterSlidersec(classCustom, arr)
+    .filter-slider(class=classCustom)
+        .swiper
+            .swiper-wrapper
+                each arrs, index in arr
+                    .swiper-slide
+                        .filter-link.swiper-link.tabBtn(class= index === 0 ? "active" : "") #{arrs.txt}
+
+mixin filterSlider(classCustom, arr)
+    .filter-slider(class=classCustom)
+        .swiper
+            .swiper-wrapper
+                each arrs, index in arr
+                    .swiper-slide
+                        a.filter-link.swiper-link(href="" class= index === 0 ? "active" : "") #{arrs.txt}
+
+mixin swiper(classCustom)
+    .swiper(class= classCustom)
+        .swiper-wrapper
+            block
+mixin swipergr(classCustom)
+    .swiper-gr(class= classCustom)
+        .swiper-btn.swiper-prev
+            i.fa-solid.fa-arrow-left
+        .swiper-btn.swiper-next
+            i.fa-solid.fa-arrow-right
+        .swiper-pagination
+mixin swiperbtn(classCustom)
+    .swiper-gr(class= classCustom)
+        .swiper-btn.swiper-prev
+            i.fa-solid.fa-arrow-left
+        .swiper-btn.swiper-next
+            i.fa-solid.fa-arrow-right
+
+mixin swpagi(classCustom)
+    .swiper-pagination(class= classCustom)
+
+mixin splide(classCustom)
+    .splide(class= classCustom)
+        .splide__track
+            .splide__list
+                block
+
+//- banner
+mixin banner(classCustom, tt ,img)
+    section.sec-banner
+        .banner(class= classCustom)
+            .banner-bg
+                +img(img)
+            .banner-wr
+                .container
+                    .banner-bdy
+                        .banner-des(data-aos="fade-up" data-aos-delay="200")
+                            +breadCrumb([{txt: tt}])
+                            h2.banner-tt= tt
+
+mixin bannerv2(classCustom, tt ,img)
+    section.sec-bannerv2
+        .bannerv2(class= classCustom)
+            .bannerv2-decor 
+                .in 
+                    +img("bubble.png")
+            .container
+                .bannerv2-wrap
+                    .bannerv2-content
+                        .bannerv2-bdy
+                            .bannerv2-des(data-aos="fade-up" data-aos-delay="200")
+                                +breadCrumb([{txt: tt}])
+                                h2.bannerv2-tt= tt
+                    .bannerv2-img
+                        .img
+                            +img(img)
+
+mixin achiveBlock(classCustom)
+    .ach-block(class= classCustom)
+        .ach-list.row
+            .col.col-6
+                .ach-item(data-aos="fade-up" data-aos-delay="200")
+                    .ach-num.counter-js
+                        .num.countNum(data-count='10' data-unit="+") 0
+                        span.txt Ngôn ngữ xuất bản
+            .col.col-6
+                .ach-item(data-aos="fade-up" data-aos-delay="300")
+                    .ach-num.counter-js
+                        .num.countNum(data-count='95' data-unit="%") 0
+                        span.txt Phản hồi tích cực
+            .col.col-6
+                .ach-item(data-aos="fade-up" data-aos-delay="400")
+                    .ach-num.counter-js
+                        .num.countNum(data-count='17' data-unit="+") 0
+                        span.txt Năm xuất bản giáo dục
+            .col.col-6
+                .ach-item(data-aos="fade-up" data-aos-delay="500")
+                    .ach-num.counter-js
+                        .num.countNum(data-count='1M' data-unit="+") 0
+                        span.txt Người học tin chọn
+mixin achiveSec()
+    section.sec-home-achive 
+        .home-achive.relative.pd-80
+            .bg-ab 
+                +img("building.png")
+            .container 
+                .home-achive-wrap 
+                    .row 
+                        .col-lf.col.col-6 
+                            .col-lf-wrap
+                                .head-gr
+                                    .icon 
+                                        +img("ic-h.png")
+                                    +ttp("Những con số nổi bật",
+                                        "mb-12",
+                                        "t-sec txt-spl",
+                                        "")
+                                    p.txt 17 năm tiên phong xuất bản và phát hành sách ngoại ngữ
+                        .col-rt.col.col-6
+                            .col-rt-wrap
+                                +achiveBlock()
+
+mixin bnfItem(icon, title, content)
+    .bnf-item 
+        .wrap 
+            .icon 
+                +img(icon)
+            h3.tt= title
+            p.content= content
+
+mixin partnerItem(br,title,classCustom)
+    .partner-item 
+        .in 
+            .br-img 
+                +img(br)
+            h3.tt= title
+
+mixin thumb()
+    section.sec-thumb
+        .thumb
+            .thumb-wr
+                .thumb-bg
+                    .inner
+                        +img("thumb-bg.jpg")
+                .container
+                    .thumb-bdy
+                        .thumb-desc 
+                            +ttp("STOP PLANNING. START DREAMING.!",
+                                "tt-center",
+                                "t-cwhite txt-spl",
+                                "")
+                            p.desc(data-aos="fade-up" data-aos-delay="200") Pick your favorite local experiences and let Mơ weave them into a sophisticated, unhurried, and safe master plan tailored just for you.
+                            .thumb-btn(data-aos="fade-up" data-aos-delay="400")
+                                +btn("Start Building Your Journey","btn-sec btn-icon btn-main","","next.png","","")

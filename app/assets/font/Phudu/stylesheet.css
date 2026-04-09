@@ -1,0 +1,63 @@
+@font-face {
+    font-family: 'Phudu';
+    src: url('Phudu-Black.woff2') format('woff2'),
+        url('Phudu-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Phudu';
+    src: url('Phudu-Bold.woff2') format('woff2'),
+        url('Phudu-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Phudu';
+    src: url('Phudu-ExtraBold.woff2') format('woff2'),
+        url('Phudu-ExtraBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Phudu';
+    src: url('Phudu-Light.woff2') format('woff2'),
+        url('Phudu-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Phudu';
+    src: url('Phudu-Medium.woff2') format('woff2'),
+        url('Phudu-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Phudu';
+    src: url('Phudu-Regular.woff2') format('woff2'),
+        url('Phudu-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Phudu';
+    src: url('Phudu-SemiBold.woff2') format('woff2'),
+        url('Phudu-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+

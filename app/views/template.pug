@@ -1,0 +1,38 @@
+extends layout/layout
+block vars
+    -title = 'NamePage'
+    -mainClass = 'page-template'
+    -bodyClass = ''
+    -hdClass = ''
+
+block container
+    +banner("","Về chúng tôi","banner-bg-1.jpg")
+
+    +breadCrumb([{txt: "Về chúng tôi"}])
+
+    .container
+        +social("",[{images: "social-1.png"},{images: "social-2.png"},{images: "social-3.png"}],"")
+        +ttp("Giải Đáp Ngay!",
+            "mb-40",
+            "t-ctext txt-spl",
+            "")
+        +ttp("Học viên <span>nói gì </span> về chúng tôi ",
+            "mb-40 ttcenter",
+            "t-ctext t-decor t-capi",
+            "fade-right")
+        +ttp("<span>Giải Đáp Ngay!</span> <br> Tất Tần Tật Về Khóa Học",
+            "mb-40 ttcenter",
+            "t-ctext t-decor f-pri t-capi",
+            "fade-up")
+        +ttp("Giải Đáp Ngay!",
+            "ttcenter",
+            "t-ctext",
+            "")
+        +btn("Yêu cầu tư vấn miễn phí","btn-sec btn-icon btn-main","","arrow.png","","")
+        +btn("Tiếp tục bài thi","btn-text btn-main","","next.png","","")
+        +btn("Thi thử ngay","btn-pri btn-main","","next.png","","")
+        +btn("Thi thử ngay","btn-pri btn-icon btn-main","","arrow.png","","")
+        +btn("Thi thử ngay","btn-white btn-main","","next.png","","")
+        +btn("Đăng nhập","btn-text btn-main","","","","")
+        +btn("View all","btn-pri btn-main","","","","")
+        +pagination("")

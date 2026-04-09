@@ -1,0 +1,118 @@
+extends layout/layout
+block vars
+    -title = 'NamePage'
+    -mainClass = 'page-template'
+    -bodyClass = ''
+    -hdClass = ''
+
+block container
+    section.sec-tourdt
+        .tourdt.pd-100
+            .tourdt-wr 
+                .container 
+                    .tourdt-head.title-head.mb-64
+                        +breadCrumb([{txt: "DONG HOI SIGHTSEEING & STREET FOOD BY BICYCLES"}])
+                        +ttp("DONG HOI SIGHTSEEING & STREET FOOD BY BICYCLES",
+                            "",
+                            "t-cpri t-upper txt-spl",
+                            "")
+                        p.desc Phong Nha Local Guide Collective
+                    .tourdt-slider(data-aos="zoom-in")
+                        +swiper()
+                            each val,index in Array(5)
+                                .swiper-slide 
+                                    .pduct-img 
+                                        .pduct-img-inner 
+                                            +img(`pduct-${index + 1}.jpg`)
+                        +swiperbtn()
+                    .tourdt-slider-gr 
+                        .tourdt-btn
+                            +btn("Book Now","btn-sec btn-reverse btn-main","fa-solid fa-play","","","")
+                        .swiper-gr.fraction.has-pagi
+                            .swiper-pagination
+
+
+    section.sec-tourrlt 
+        .tourrlt.mb-100 
+            .container 
+                .tourrlt-wr
+                    .tourrlt-head.mb-32.headwr
+                        +ttp("relateD the tours",
+                            "",
+                            "t-cpri t-upper txt-spl",
+                            "")
+                        +btn("See All Tours","btn-pri btn-icon btn-main","","next.png","","") 
+                    .tourrlt-slider 
+                        +swiper()
+                            - 
+                                const arrs = [
+                                    {
+                                    imgtag: "Quang Tri",
+                                    img: "pduct-1.jpg",
+                                    tag: "Phong Nha Local Guide Collective",
+                                    title: "Phong Nha Sunset & Cave Adventure"},
+                                    {
+                                    imgtag: "Da Nang",
+                                    img: "pduct-2.jpg",
+                                    tag: "Pineapple Lantern Workshop",
+                                    title: "Hoi An Lantern Craft & Old Town Walk"
+                                    },
+                                    {
+                                    imgtag: "Hue",
+                                    img: "pduct-3.jpg",
+                                    tag: "Hue Local Riders",
+                                    title: "Hue Street Food & Heritage Ride"
+                                    },
+                                    {
+                                    imgtag: "Quang Tri",
+                                    img: "pduct-4.jpg", 
+                                    tag: "Netin Travel",
+                                    title: "Historical Dong Hoi: From War to Peace"
+                                    },
+                                    {
+                                    imgtag: "Ho Chi Minh City",
+                                    img: "pduct-5.jpg",
+                                    tag: "Con Dao Dive Center",
+                                    title: "Diving the Coral Reefs of Bay Canh"
+                                    },
+                                    {
+                                    imgtag: "Dak Lak",
+                                    img: "pduct-6.jpg",
+                                    tag: "Lak Tented Camp",
+                                    title: "Gong Culture & Coffee Harvest Workshop"
+                                    }
+                                ]
+                            each arr in arrs
+                                .swiper-slide.col-4
+                                    .pduct
+                                        .pduct-img 
+                                            .pduct-img-inner 
+                                                +img(arr.img)
+                                        .pduct-tag
+                                            p.tag
+                                                +img("location.png")
+                                                = arr.imgtag
+                                        .pduct-desc
+                                            .pduct-desc-inner
+                                                p.pduct-desc-tag= arr.tag
+                                                h3.pduct-tt
+                                                    a.link(href="")= arr.title
+                                                ul.pduct-list 
+                                                    li.pduct-item
+                                                        span.txt Adult 
+                                                            span.text 
+                                                                span.bold  $95
+                                                                |/person
+                                                    li.pduct-item
+                                                        span.txt Child 
+                                                            span.text
+                                                                span.bold  $75
+                                                                |/person
+                                            .pduct-btn
+                                                +btn("Explore the Tour","btn-pri btn-icon btn-main","","next.png","","")
+
+                        .swiper-pagination 
+
+
+    +thumb()
+

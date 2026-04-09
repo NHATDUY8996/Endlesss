@@ -1,0 +1,128 @@
+.pagi-pri {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 4rem;
+    @include max(768px){
+        padding-top: 2.4rem;
+    }
+    .pagination {
+        width: 100%;
+    }
+    &.sec {
+        li {
+            > .page-numbers {
+                &::after {
+                    background-color: var(--color-text);
+                }
+                &.current,
+                &:hover {
+                    border-color: var(--color-text);
+                }
+            }
+        }
+    }
+}
+
+.page-numbers {
+    @include flex;
+    gap: .4rem;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 5;
+
+    > li {
+        &:not(:first-child) {
+            margin-left: 0;
+        }
+
+        & > .page-numbers {
+            --wh: 4rem;
+            width: var(--wh);
+            height: var(--wh);
+            @include mid-flex;
+            background-color: #EFEDE6;
+            border: 0.1rem solid #EFEDE6;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            color: var(--color-text);
+            @include fz-16;
+            line-height: normal;
+            font-family: var(--font-pri);
+            font-weight: 500;
+            transition: all 0.4s ease;
+            border-radius: 100%;
+            @include affter(var(--color-second));
+
+            &:after {
+                z-index: -1;
+            }
+
+            @include max(1200px) {
+                --wh: 3.6rem;
+            }
+            @include hover {
+                &:not(.dot) {
+                    border-color: var(--color-second);
+                    color: var(--white);
+                    &::after {
+                        left: 0;
+                        width: 100%;
+                    }
+                }
+            }
+
+            &.current {
+                font-weight: 700;
+                // border-color: var(--color-pri);
+                color: var(--white);
+                &::after {
+                    left: 0;
+                    width: 100%;
+                }
+            }
+
+            &.dot {
+                background-color: transparent;
+                border: transparent !important;
+            }
+
+            &.next {
+                @include min(801px) {
+                }
+            }
+
+            &.prev {
+                @include min(801px) {
+                }
+            }
+
+            &.next,
+            &.prev {
+                @include mid-flex;
+                position: relative;
+                border-radius: none;
+
+                @include min(601px) {
+                    // width: fit-content;
+                }
+
+            }
+
+            .txt {
+                display: none;
+
+                @include max(600px) {
+                }
+            }
+
+            i {
+                // @include min(601px) {
+                //   display: none;
+                // }
+            }
+        }
+    }
+}

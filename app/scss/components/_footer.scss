@@ -1,0 +1,180 @@
+.footer{
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background-color: var(--white);
+
+    .header-logo{
+        --logo: 16rem;
+        width: 100%;
+        position: relative !important;
+         @include max(800px){
+            .custom-logo-link{
+                margin: 0 auto;
+            }
+        }
+        .custom-logo-link{
+            width: var(--logo);
+            height: auto;
+            max-width: 100%;
+        }
+    }
+    &-bdy{
+        padding: 8.4rem 0;
+        @include max(800px){
+            padding: 4rem 0 3rem;
+        }
+    }
+
+    &-row{
+        --cgap: 2rem;
+        --rgap: 2rem;
+        justify-content: space-between;
+    }
+    &-tt{
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: var(--color-second);
+        margin-bottom: var(--dist40);
+    }
+    
+    &-inner{
+        @include flex-col;
+     
+        .menu-list{
+            @include flex-col;
+            gap: 1.8rem;
+            @include max(800px){
+                gap: 1.2rem;
+            }
+        }
+        .menu-item{
+            @include fz-16;
+            color: var(--color-text);
+            transition: all .3s ease;
+            @include hover{
+                color: var(--color-pri);
+            }
+            &.current-menu-item{
+                font-weight: 600;
+                color: var(--color-pri);
+            }
+        }
+      
+    }
+    &-col{
+        &:nth-child(1){
+            @include max(800px){
+                width: 100%;
+                text-align: center;
+            }
+        }
+        &:nth-child(2){
+            @include max(800px){
+                width: 40%;
+            }
+            @include max(500px){
+                width: 100%;
+           }
+        }
+
+        &:nth-child(3){
+            @include max(800px){
+                width: 60%;
+            }
+            @include max(500px){
+                width: 100%;
+            }
+        }
+    }
+    &-list{
+        @include flex-col;
+        gap: 1.8rem;
+        @include max(800px){
+            gap: 1.2rem;
+        }
+    }
+    &-item{
+        .desc{
+            .txt{
+                font-weight: 700;
+            }
+        }
+        .link{
+            @include hover{
+                color: var(--color-pri);
+                text-decoration: underline;
+            }
+        }
+    }
+    &-author{
+        &-inner{
+            padding: var(--dist24) 0;
+            @include flex-wr;
+            align-items: center;
+            gap: 1.6rem;
+            justify-content: space-between;
+            @include max(800px){
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                border-top: .1rem solid var(--color-pri);
+                gap: 1.2rem;
+                padding: 1.6rem 0;
+            }
+            img{
+                height: 1.3rem;
+                width: auto;
+                display: block;
+            }
+        }
+        &-desc{
+            @include flex-wr;
+            gap: .8rem;
+            align-items: center;
+            justify-content: center;
+
+        }
+        .menu-list{
+            @include flex-wr;
+            align-items: center;
+            gap: var(--dist24);
+            @include max(800px){
+                justify-content: center;
+                text-align: center;
+            }
+        }
+        .menu-link{
+            font-weight: 500;
+            color: var(--color-pri);
+            text-decoration: underline;
+            transition: all .3s ease;
+         
+            @include hover{
+            }
+        }
+    }
+
+    &-lf{
+        @include flex-col;
+        gap: 2.4rem;
+        @include max(800px){
+            gap: 1.6rem;
+        }
+        .desc{
+            color: var(--color-text);
+            width: 51rem;
+            max-width: 100%;
+            span{
+                font-weight: 700;
+            }
+        }
+        @include max(800px){
+            align-items: center;
+            .desc{
+                text-align: center;
+            }
+        }
+    }
+}
+

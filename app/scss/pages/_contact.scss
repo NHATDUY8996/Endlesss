@@ -1,0 +1,205 @@
+.ctinfo{
+    position: relative;
+    overflow: hidden;
+    &::before{
+        position: absolute;
+        content: '';
+        inset: 0;
+        z-index: -1;
+        background: linear-gradient(180deg, #DCE5C8 0%, #F7F6F2 50%);
+    }
+    &-map{
+        width: 100%;
+        .inner{
+            @include imgPd(400,1216);
+            border-radius: 1.2rem;
+            overflow: hidden;
+            @include max(800px){
+                padding-top: 50%;
+            }
+            iframe,
+            img{
+                @include imgCover;
+            }
+        }
+    }
+    &-desc{
+        display: flex;
+        gap: var(--dist48);
+        @include min(1200px){
+            align-items: flex-start;
+            .ctinfo-list{
+                width: 50%;
+            }
+            &-head{
+                width: 50%;
+            }
+        }
+    }
+    &-list{
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        gap: var(--dist40) 1rem;
+    }
+    &-item {
+        @include flex-col;
+        gap: 1.4rem;
+        .tt{
+            position: relative;
+            color: var(--color-pri);
+            font-weight: 700;
+            text-transform: uppercase;
+            &::before{
+                position: absolute;
+                content: '';
+                width: 1.2rem;
+                height: 1.2rem;
+                border-radius: 50%;
+                background-color: var(--color-second);
+                top: .5rem;
+                right: calc(100% + .8rem);
+            }
+        }
+        &:nth-child(3),
+        &:nth-child(1){
+            grid-column: span 6;
+        }
+
+        &:nth-child(2),
+        &:nth-child(4){
+            grid-column: span 2;
+        }
+        .social{
+            &-list{
+                gap: .8rem;
+            }
+            &-link{
+                --wicon: 2rem;
+            }
+        }
+        .link{
+            transition: all .3s ease;
+            @include hover{
+                color: var(--color-pri);
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.ctact{
+    position: relative;
+    z-index: 1;
+    padding: 2rem 0 var(--dist100);
+    &-bg{
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        overflow: hidden;
+        &::before{
+            position: absolute;
+            content: '';
+            inset: 0;
+            z-index: 1;
+            background: linear-gradient(180deg, #F7F6F2 25%, rgba(255,255,255, 0) 75%);
+        }
+        .inner{
+            width: 100%;
+            height: 100%;
+            clip-path: inset(0);
+            img{
+                @include imgcv;
+                position: fixed;
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+    &-bdy{
+        width: 101rem;
+        margin: 0 auto;
+        background-color: #F7F6F2;
+        border-radius: var(--dist12);
+        border: .1rem solid var(--color-bg);
+        padding: 4.8rem;
+    }
+    &-frm{
+        .frm-item{
+            .recheck-des{
+                padding: 0;
+                padding: .8rem 1.6rem;
+                background-color: var(--color-third);
+                border-radius: 3rem;
+                align-items: center;
+                display: flex;
+                color: var(--color-pri);
+                &::after{
+                    order: -1;
+                    position: relative;
+                    top: auto;
+                    transform: translate(0,0);
+                    width: 2rem;
+                    height: 2rem;
+                    display: none;
+                }
+            }
+            .recheck-input{
+                display: none;
+                &:checked + .recheck-des{
+                    background-color: var(--color-pri);
+                    color: var(--white);
+                    &::after{
+                        display: block;
+                    }
+                }
+            }
+        }
+        &-head{
+            @include flex-col;
+            gap: .8rem;
+            margin-bottom: var(--dist28);
+            align-items: center;
+            text-align: center;
+            .title-tag{
+                font-size: 1.6rem
+            }
+        }
+        &-bdy{
+            @include flex-col;
+            gap: var(--dist28);
+            align-items: center;
+        }
+    }
+    &-btn{
+        @include flex-col;
+        gap: .8rem;
+        align-items: center;
+        text-align: center;
+
+        .desc{
+            font-size: 1.4rem;
+            color: #7F857C;
+         }
+    }
+}
+.success{
+    @include flex-col;
+    align-items: center;
+    gap: var(--dist40);
+    &-img{
+        width: 27.2rem;
+        max-width: 70%;
+        img{
+            @include imgct;
+        }
+    }
+    &-desc{
+        @include flex-col;
+        gap: .8rem;
+        align-items: center;
+        text-align: center;
+        .btn-main{
+            margin-top: 1.6rem;
+        }
+    }
+}

@@ -1,0 +1,211 @@
+extends layout/layout
+block vars
+    -title = 'NamePage'
+    -mainClass = 'page-template'
+    -bodyClass = ''
+    -hdClass = ''
+
+block container
+    +banner("","Giới thiệu về McBooks","banner-bg-1.jpg")
+
+    section.sec-abinfo
+        .abinfo.pd-100 
+            .container 
+                .abinfo-wr 
+                    .swiper
+                        .swiper-wrapper
+                            .abinfo-inner.swiper-slide.add-class
+                                .abinfo-img
+                                    .inner
+                                        +img("abinfo-1.jpg")
+                                .abinfo-desc
+                                    .abinfo-desc-inner
+                                        h3.tt(data-aos="fade-up") Hành trình hơn 17 năm xuất bản & phát hành sách 
+                                        .desc.ctentMorejs
+                                            .mona-content.ctentjs(data-aos="fade-up" data-aos-delay="200")
+                                                p MCBooks là thương hiệu xuất bản và phát hành sách uy tín tại Việt Nam, hoạt động với định hướng lấy tri thức, giáo dục và giá trị bền vững làm nền tảng phát triển. Trong suốt quá trình hình thành và mở rộng, MCBooks luôn kiên định với mục tiêu mang đến cho bạn đọc Việt Nam những ấn phẩm chất lượng, có giá trị thực tiễn cao và phù hợp với nhu cầu học tập – phát triển trong bối cảnh xã hội hiện đại.
+                                                p Xuất phát từ mong muốn góp phần nâng cao tri thức cộng đồng, MCBooks không chỉ tập trung vào việc phát hành sách, mà còn chú trọng xây dựng một hệ sinh thái nội dung giáo dục toàn diện, nơi tri thức được truyền tải một cách dễ hiểu, có hệ thống và dễ tiếp cận với nhiều đối tượng độc giả khác nhau.
+
+                            .abinfo-inner.swiper-slide.add-class
+                                .abinfo-img
+                                    .inner 
+                                        +img("abinfo-2.jpg")
+                                .abinfo-desc
+                                    .abinfo-desc-inner
+                                        h3.tt(data-aos="fade-up") Định hướng nội dung lấy người học làm trung tâm
+                                        .desc.ctentMorejs
+                                            .mona-content.ctentjs(data-aos="fade-up" data-aos-delay="200")
+                                                p Một trong những điểm khác biệt của MCBooks nằm ở cách tiếp cận nội dung. Mỗi đầu sách được xuất bản đều hướng tới việc giải quyết nhu cầu học tập thực tế của người đọc, thay vì chỉ dừng lại ở lý thuyết hàn lâm. Nội dung sách được biên soạn và lựa chọn dựa trên các tiêu chí: dễ hiểu, dễ áp dụng, phù hợp với bối cảnh giáo dục và văn hóa Việt Nam.
+
+                            .abinfo-inner.swiper-slide.add-class
+                                .abinfo-img
+                                    .inner 
+                                        +img("abinfo-3.jpg")
+                                .abinfo-desc
+                                    .abinfo-desc-inner
+                                        h3.tt(data-aos="fade-up") Quy trình xuất bản nghiêm túc và chuẩn mực
+
+                                        .desc.ctentMorejs
+                                            .mona-content.ctentjs(data-aos="fade-up" data-aos-delay="200")
+                                                p Chất lượng nội dung luôn là yếu tố được MCBooks đặt lên hàng đầu. Mỗi cuốn sách trước khi phát hành đều trải qua quy trình biên tập và kiểm soát chặt chẽ, từ khâu lựa chọn bản thảo, dịch thuật, biên tập nội dung cho đến thiết kế và in ấn. MCBooks hợp tác với đội ngũ biên tập viên, dịch giả, chuyên gia giáo dục và cố vấn nội dung có kinh nghiệm, nhằm đảm bảo tính chính xác, logic và dễ tiếp thu cho người đọc.
+                                                p Bên cạnh việc phát triển các đầu sách trong nước, MCBooks cũng chủ động hợp tác với các đối tác quốc tế và tác giả nước ngoài, lựa chọn những tác phẩm có giá trị, sau đó bản địa hóa nội dung để phù hợp với người Việt Nam.
+
+                    .swiper-pagination
+
+    section.sec-abvission
+        .abvission.pd-100
+            .vision-bg 
+                +img("vision-bg.jpg")
+            .container 
+                .abvission-wr.move-item
+                    .abvission-decor 
+                        +img("abvission-decor.png")
+                    .abvission-slider 
+                        .swiper
+                            .swiper-wrapper.abvission-content
+                                .swiper-slide.abvission-item(data-aos="zoom-in" data-aos-delay="300")
+                                    .inner
+                                        .icon 
+                                            +img("abvission-ic-1.png")
+                                        h3.tt Tầm nhìn
+                                        .desc.ctentMorejs
+                                            .mona-content.ctentjs
+                                                p Trở thành thương hiệu số 1 tại thị trường VN cung cấp các sản phẩm về sách, khóa học online và lớp học trực tuyến
+                                                p Giúp nhân viên có mức thu nhập trung bình tăng liên tục 15% mỗi năm
+                                .swiper-slide.abvission-item(data-aos="zoom-in" data-aos-delay="300")
+                                    .inner
+                                        .icon
+                                            +img("abvission-ic-2.png")
+                                        h3.tt Sứ mệnh
+                                        .desc.ctentMorejs
+                                            .mona-content.ctentjs
+                                                p Giúp mọi người nâng tầm tri thức, hội nhập quốc tế thông qua các sản phẩm giáo dục.
+                                                p Mang lại niềm hạnh phúc và tự hào cho nhân viên ở nơi làm việc, giúp nhân viên đạt được mục tiêu về sự nghiệp và tài chính.
+                        .swiper-pagination
+    +achiveSec()
+
+    section.sec-partner 
+        .partner.pd-80
+            .container 
+                .partner-wrap.js-partner
+                    .headwr.mb-48
+                        .tt-gr
+                            +img("ic-h.png")
+                            +ttp("Đối tác & Nhà xuất bản uy tín",
+                                "",
+                                "t-sec txt-spl",
+                                "")
+                        +swiperbtn("")
+                    .partner-slider
+                        +swiper 
+                            .swiper-slide
+                                +partnerItem("br-1.png","Quỹ Giao lưu Quốc tế Hàn Quốc ")
+                            .swiper-slide
+                                +partnerItem("br-2.png","Nhà xuất bản Giáo dục Macmillan")
+                            .swiper-slide
+                                +partnerItem("br-3.png","Nhà xuất bản Đại học Oxford")
+                            .swiper-slide
+                                +partnerItem("br-4.png","Nhà xuất bản Diamond (Nhật Bản)")
+                            .swiper-slide
+                                +partnerItem("br-5.png","Nhà xuất bản Đại học Ngôn ngữ và Văn hóa Bắc Kinh")
+                            .swiper-slide
+                                +partnerItem("br-6.png","Nhà xuất bản Đại học Bắc Kinh")
+                            .swiper-slide
+                                +partnerItem("br-7.png","Nhà xuất bản Đại học Thanh Hoa")
+                            .swiper-slide
+                                +partnerItem("br-8.png","Công ty Công nghệ và Văn hóa Trí tuệ Bắc Kinh")
+                            .swiper-slide
+                                +partnerItem("br-1.png","Quỹ Giao lưu Quốc tế Hàn Quốc ")
+                            .swiper-slide
+                                +partnerItem("br-2.png","Nhà xuất bản Giáo dục Macmillan")
+                            .swiper-slide
+                                +partnerItem("br-3.png","Nhà xuất bản Đại học Oxford")
+                            .swiper-slide
+                                +partnerItem("br-4.png","Nhà xuất bản Diamond (Nhật Bản)")
+                            .swiper-slide
+                                +partnerItem("br-5.png","Nhà xuất bản Đại học Ngôn ngữ và Văn hóa Bắc Kinh")
+                            .swiper-slide
+                                +partnerItem("br-6.png","Nhà xuất bản Đại học Bắc Kinh")
+                            .swiper-slide
+                                +partnerItem("br-7.png","Nhà xuất bản Đại học Thanh Hoa")
+                            .swiper-slide
+                                +partnerItem("br-8.png","Công ty Công nghệ và Văn hóa Trí tuệ Bắc Kinh")
+                        .swiper-pagination
+
+    section.sec-abhis 
+        .abhis
+            .container 
+                .abhis-wr 
+                    .abhis-head 
+                        +ttp("Những Cột Mốc Đáng Nhớ",
+                            "mb-48",
+                            "t-sec txt-spl",
+                            "")
+                    .abhis-bdy 
+                        .abhis-decor 
+                            +img("abhis-decor.png")
+                        .abhis-slider 
+                            .swiper
+                                .swiper-wrapper.abhis-inner
+                                    - 
+                                        const abhis = [
+                                            { numb: '2024'},
+                                            { numb: '2022'},
+                                            { numb: '2019'},
+                                            { numb: '2016'},
+                                            { numb: '2014'},
+                                            { numb: '2011'},
+                                            { numb: '2008'},
+                                        ]
+                                    each his in abhis
+                                        .swiper-slide.abhis-item.add-class
+                                            .abhis-item-inner
+                                                .abhis-dc 
+                                                    span 
+                                                span.abhis-cir 
+
+                                                .abhis-img 
+                                                    .inner 
+                                                        +img("abhis.jpg")
+                                                .abhis-desc
+                                                    h3.tt Thành lập Công ty Cổ phần Sách MCBooks, chuyên về sách ngoại ngữ.
+                                                    o.numb= his.numb
+
+                            .swiper-pagination 
+
+
+    section.sec-abtrade
+        .abtrade.pd-100 
+            .container 
+                .abtrade-wr 
+                    +ttp("Các thương hiệu của MCBooks",
+                        "ttcenter mb-48",
+                        "t-sec txt-spl",
+                        "")
+                    .abtrade-bdy
+                        .abtrade-list.collapse-block2
+                            -
+                                const abtrades = [
+                                    { tt: 'MCBooks'},
+                                    { tt: 'TKBooks'},
+                                    { tt: 'FinyBooks'},
+                                    { tt: 'Unibooks'},
+                                ]
+                            each val, index in abtrades
+                                .abtrade-item.collapse-item2
+                                    .abtrade-item-head.collapse-head2
+                                        h3.tt= val.tt
+                                        .abtrade-img 
+                                            +img(`abtrade-${index + 1}.png`)
+                                    .abtrade-item-bdy.collapse-body2
+                                        .abtrade-desc
+                                            .abtrade-img 
+                                                +img(`abtrade-${index + 1}.png`)
+                                            .abtrade-ctent
+                                                .head 
+                                                    h3.tt= val.tt
+                                                    p.text CHIA SẺ TRI THỨC 
+                                                p.abtrade-tag Chuyên về sách ngoại ngữ
+                                                .mona-content 
+                                                    p MCBooks là thương hiệu xuất bản và phát hành sách uy tín tại Việt Nam, hoạt động với định hướng lấy tri thức, giáo dục và giá trị bền vững làm nền tảng phát triển. Trong suốt quá trình hình thành và mở rộng, MCBooks luôn kiên định với mục tiêu mang đến cho bạn đọc Việt Nam những ấn phẩm chất lượng, có giá trị thực tiễn cao và phù hợp với nhu cầu học tập – phát triển trong bối cảnh xã hội hiện đại. 
+

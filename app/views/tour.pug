@@ -1,0 +1,99 @@
+extends layout/layout
+block vars
+    -title = 'NamePage'
+    -mainClass = 'page-template'
+    -bodyClass = ''
+    -hdClass = ''
+
+block container
+    section.sec-tour
+        .tour.pd-100
+            .tour-bg 
+                .inner 
+                    +img("tour-bg.jpg")
+            .tour-wr 
+                .container 
+                    .tour-head.mb-64
+                        +breadCrumb([{txt: "Tour"}])
+                        +ttp("Experiences",
+                            "",
+                            "t-cpri f-100 t-upper txt-spl",
+                            "")
+                        +filterSlider("", [
+                            {txt: "All Tours"},
+                            {txt: "Central Vietnam"},
+                            {txt: "Central Highlands"},
+                            {txt: "Con Dao Islands"},
+                        ])
+                    .tour-bdy 
+                        .tour-row.row.row-3
+                            - 
+                                const arrs = [
+                                    {
+                                    imgtag: "Quang Tri",
+                                    img: "pduct-1.jpg",
+                                    tag: "Phong Nha Local Guide Collective",
+                                    title: "Phong Nha Sunset & Cave Adventure"},
+                                    {
+                                    imgtag: "Da Nang",
+                                    img: "pduct-2.jpg",
+                                    tag: "Pineapple Lantern Workshop",
+                                    title: "Hoi An Lantern Craft & Old Town Walk"
+                                    },
+                                    {
+                                    imgtag: "Hue",
+                                    img: "pduct-3.jpg",
+                                    tag: "Hue Local Riders",
+                                    title: "Hue Street Food & Heritage Ride"
+                                    },
+                                    {
+                                    imgtag: "Quang Tri",
+                                    img: "pduct-4.jpg", 
+                                    tag: "Netin Travel",
+                                    title: "Historical Dong Hoi: From War to Peace"
+                                    },
+                                    {
+                                    imgtag: "Ho Chi Minh City",
+                                    img: "pduct-5.jpg",
+                                    tag: "Con Dao Dive Center",
+                                    title: "Diving the Coral Reefs of Bay Canh"
+                                    },
+                                    {
+                                    imgtag: "Dak Lak",
+                                    img: "pduct-6.jpg",
+                                    tag: "Lak Tented Camp",
+                                    title: "Gong Culture & Coffee Harvest Workshop"
+                                    }
+                                ]
+                            each arr in arrs
+                                .tour-col.col.col-4
+                                    .pduct
+                                        .pduct-img 
+                                            .pduct-img-inner 
+                                                +img(arr.img)
+                                        .pduct-tag
+                                            p.tag
+                                                +img("location.png")
+                                                = arr.imgtag
+                                        .pduct-desc
+                                            .pduct-desc-inner
+                                                p.pduct-desc-tag= arr.tag
+                                                h3.pduct-tt
+                                                    a.link(href="")= arr.title
+                                                ul.pduct-list 
+                                                    li.pduct-item
+                                                        span.txt Adult 
+                                                            span.text 
+                                                                span.bold  $95
+                                                                |/person
+                                                    li.pduct-item
+                                                        span.txt Child 
+                                                            span.text
+                                                                span.bold  $75
+                                                                |/person
+                                            .pduct-btn
+                                                +btn("Explore the Tour","btn-pri btn-icon btn-main","","next.png","","")
+
+                        +pagination()
+
+    +thumb()

@@ -1,0 +1,37 @@
+.count{
+    @include flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .4rem 1.2rem;
+    height: var(--wbtn);
+    border: .1rem solid var(--border);
+    width: fit-content;
+    min-width: 13.8rem;
+    border-radius: 4rem;
+    @include max(800px){
+        gap: .2rem;
+        min-width: 10rem;
+    }
+    input{
+        display: none;
+    }
+    &-btn{
+        @include mid-flex;
+        --wbtn: 2.4rem;
+        width: var(--wbtn);
+        height: var(--wbtn);
+        cursor: pointer;
+        &.disable{
+            opacity: .4;
+            pointer-events: none;
+        }
+        img{
+            @include imgct;
+        }
+    }
+    &-number{
+        @include fz-16;
+        font-weight: 600;
+        color: var(--color-text);
+    }
+}

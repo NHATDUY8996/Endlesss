@@ -1,0 +1,96 @@
+extends layout/layout
+block vars
+    -title = 'NamePage'
+    -mainClass = 'page-template'
+    -bodyClass = ''
+    -hdClass = ''
+
+block container
+    +banner("banner-sec","Terms & Conditions","")
+
+    section.sec-csbm 
+        .csbm
+            .container 
+                .csbm-wr 
+                    .csbm-row.row 
+                        .csbm-col.col.col-9
+                            .csbm-desc 
+                                .mona-content 
+                                    h3 1. Overview
+                                    p 1.1. Người dùng có thể đăng kí tài khoản trên trang web của MCBooks JSC bằng cách cung cấp thông tin cá nhân cần thiết như tên, địa chỉ email, số điện thoại và mật khẩu. Thông tin này sẽ được sử dụng để xác thực và quản lý tài khoản của người dùng.
+                                    p 1.2. Người dùng cam kết cung cấp thông tin chính xác và đầy
+                                    h3 1. Overview
+                                    p 1.1. Người dùng có thể đăng kí tài khoản trên trang web của MCBooks JSC bằng cách cung cấp thông tin cá nhân cần thiết như tên, địa chỉ email, số điện thoại và mật khẩu. Thông tin này sẽ được sử dụng để xác thực và quản lý tài khoản của người dùng.
+                                    p 1.2. Người dùng cam kết cung cấp thông tin chính xác và đầy
+                                    h3 1. Overview
+                                    p 1.1. Người dùng có thể đăng kí tài khoản trên trang web của MCBooks JSC bằng cách cung cấp thông tin cá nhân cần thiết như tên, địa chỉ email, số điện thoại và mật khẩu. Thông tin này sẽ được sử dụng để xác thực và quản lý tài khoản của người dùng.
+                                    p 1.2. Người dùng cam kết cung cấp thông tin chính xác và đầy
+                                    h3 1. Overview
+                                    p 1.1. Người dùng có thể đăng kí tài khoản trên trang web của MCBooks JSC bằng cách cung cấp thông tin cá nhân cần thiết như tên, địa chỉ email, số điện thoại và mật khẩu. Thông tin này sẽ được sử dụng để xác thực và quản lý tài khoản của người dùng.
+                                    p 1.2. Người dùng cam kết cung cấp thông tin chính xác và đầy
+                                    h3 1. Overview
+                                    p 1.1. Người dùng có thể đăng kí tài khoản trên trang web của MCBooks JSC bằng cách cung cấp thông tin cá nhân cần thiết như tên, địa chỉ email, số điện thoại và mật khẩu. Thông tin này sẽ được sử dụng để xác thực và quản lý tài khoản của người dùng.
+                                    p 1.2. Người dùng cam kết cung cấp thông tin chính xác và đầy
+                                    h3 1. Overview
+                                    p 1.1. Người dùng có thể đăng kí tài khoản trên trang web của MCBooks JSC bằng cách cung cấp thông tin cá nhân cần thiết như tên, địa chỉ email, số điện thoại và mật khẩu. Thông tin này sẽ được sử dụng để xác thực và quản lý tài khoản của người dùng.
+                                    p 1.2. Người dùng cam kết cung cấp thông tin chính xác và đầy
+                                    h3 1. Overview
+                                    p 1.1. Người dùng có thể đăng kí tài khoản trên trang web của MCBooks JSC bằng cách cung cấp thông tin cá nhân cần thiết như tên, địa chỉ email, số điện thoại và mật khẩu. Thông tin này sẽ được sử dụng để xác thực và quản lý tài khoản của người dùng.
+                                    p 1.2. Người dùng cam kết cung cấp thông tin chính xác và đầy
+                                    h3 1. Overview
+                                    p 1.1. Người dùng có thể đăng kí tài khoản trên trang web của MCBooks JSC bằng cách cung cấp thông tin cá nhân cần thiết như tên, địa chỉ email, số điện thoại và mật khẩu. Thông tin này sẽ được sử dụng để xác thực và quản lý tài khoản của người dùng.
+                                    p 1.2. Người dùng cam kết cung cấp thông tin chính xác và đầy
+                                    h3 1. Overview
+                                    p 1.1. Người dùng có thể đăng kí tài khoản trên trang web của MCBooks JSC bằng cách cung cấp thông tin cá nhân cần thiết như tên, địa chỉ email, số điện thoại và mật khẩu. Thông tin này sẽ được sử dụng để xác thực và quản lý tài khoản của người dùng.
+                                    p 1.2. Người dùng cam kết cung cấp thông tin chính xác và đầy
+
+                                .csbm-desc-inner 
+                                    .csbm-tag 
+                                        p.txt Hashtag
+                                        .csbm-tag-list
+                                            a.tag(href="") Updates
+                                            a.tag(href="") Culture
+                                            a.tag(href="") Technology
+                                            a.tag(href="") Data driven
+
+                                    .social 
+                                        p.txt Chia sẻ bài viết 
+                                        .social-list 
+                                            .social-item.btncopyJs(data-txt="Đã sao chép")
+                                                a.social-link(href="") 
+                                                    +img("copy.png")
+                                            each val, index in Array(2)
+                                                .social-item 
+                                                    a.social-link(href="")
+                                                        +img(`sc-${index + 1}.png`)  
+
+                        .csbm-col.col.col-3 
+                            .newsdt-side
+                                #ez-toc-container.ez-toc-v2_0_67_1.counter-hierarchy.ez-toc-counter.ez-toc-grey.ez-toc-container-direction
+                                    .ez-toc-title-container
+                                        p.ez-toc-title Table of Contents
+                                        span.ez-toc-title-toggle
+                                            a.ez-toc-pull-right.ez-toc-btn.ez-toc-btn-xs.ez-toc-btn-default.ez-toc-toggle.ez-toc-loaded(href="#" aria-label="Toggle Table of Content")
+                                                span.ez-toc-js-icon-con
+                                                    span
+                                                        span.eztoc-hide(style="display:none;") Toggle
+                                                        span.ez-toc-icon-toggle-span
+                                                            svg.list-377408(style="fill: #999;color:#999" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24" fill="none")
+                                                                path(d="M6 6H4v2h2V6zm14 0H8v2h12V6zM4 11h2v2H4v-2zm16 0H8v2h12v-2zM4 16h2v2H4v-2zm16 0H8v2h12v-2z" fill="currentColor")
+                                                            svg.arrow-unsorted-368013(style="fill: #999;color:#999" xmlns="http://www.w3.org/2000/svg" width="10px" height="10px" viewBox="0 0 24 24" version="1.2" baseProfile="tiny")
+                                                                path(d="M18.2 9.3l-6.2-6.3-6.2 6.3c-.2.2-.3.4-.3.7s.1.5.3.7c.2.2.4.3.7.3h11c.3 0 .5-.1.7-.3.2-.2.3-.5.3-.7s-.1-.5-.3-.7zM5.8 14.7l6.2 6.3 6.2-6.3c.2-.2.3-.5.3-.7s-.1-.5-.3-.7c-.2-.2-.4-.3-.7-.3h-11c-.3 0-.5.1-.7.3-.2.2-.3.5-.3.7s.1.5.3.7z")
+                                    nav
+                                        ul.ez-toc-list.ez-toc-list-level-1
+                                            li.ez-toc-page-1.ez-toc-heading-level-2
+                                                a.ez-toc-link.ez-toc-heading-1.active(href="#1_Dai_cuong" title="1. Đại cương") 1. Đại cương
+                                            li.ez-toc-page-1.ez-toc-heading-level-2
+                                                a.ez-toc-link.ez-toc-heading-2(href="#2_May_moc_su_dung" title="2. Máy móc sử dụng") 2. Máy móc sử dụng
+                                            li.ez-toc-page-1.ez-toc-heading-level-2
+                                                a.ez-toc-link.ez-toc-heading-3(href="#3_Chong_chi_dinh" title="3. Chống chỉ định") 3. Chống chỉ định
+                                            li.ez-toc-page-1.ez-toc-heading-level-2
+                                                a.ez-toc-link.ez-toc-heading-4(href="#4_Uu_%E2%80%93_Nhuoc_diem_khi_dieu_tri" title="4. Ưu – Nhược điểm khi điều trị") 4. Ưu – Nhược điểm khi điều trị
+                                            li.ez-toc-page-1.ez-toc-heading-level-2
+                                                a.ez-toc-link.ez-toc-heading-5(href="#5_Dieu_tri" title="5. Điều trị") 5. Điều trị
+                                            li.ez-toc-page-1.ez-toc-heading-level-2
+                                                a.ez-toc-link.ez-toc-heading-6(href="#6_Cham_soc_sau_dieu_tri" title="6. Chăm sóc sau điều trị") 6. Chăm sóc sau điều trị
+

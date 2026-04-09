@@ -1,0 +1,211 @@
+.pduct{
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.2rem;
+    height: 100%;
+    @include hover{
+        .pduct-desc{
+            background-color: var(--color-second);
+        }
+        .pduct-tt{
+            color: var(--color-text);
+        }
+    }
+    &-img{
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        &-inner{
+            @include imgPd(260,388);
+            img{
+                @include imgCover;
+                transition: all .3s ease;
+            }
+        }
+        @include hover {
+            .pduct-img-inner{
+                img{
+                    transform: translate(-50%,-50%) scale(1.1);
+                }
+            }
+        }
+    }
+     &-tag{
+        position: absolute;
+        top: 1.2rem;
+        right: 1.2rem;
+        @include flex-wr;
+        gap: .8rem;
+        justify-content: flex-end;
+        .tag{
+            padding: .6rem 1.2rem;
+            background-color: var(--color-second);
+            @include flex;
+            align-items: center;
+            gap: .4rem;
+            font-size: 1.4rem;
+            font-weight: 600;
+            border-radius: 4rem;
+            img{
+                @include icon(2rem);
+            }
+        }
+    }
+    &-desc{
+        padding: 2.4rem;
+        @include flex-col;
+        gap: var(--dist24);
+        background-color: var(--color-third);
+        transition: all .3s ease;
+        @include max(800px){
+            padding: 1.6rem 1.2rem;
+        }
+        &-inner{
+            @include flex-col;
+            gap: var(--dist12);
+        }
+        .btn-main{
+            width: 100%;
+            .text,.txt{
+                margin: 0 auto;
+            }
+            .icon{
+            }
+        }
+        &-tag{
+            text-decoration: underline;
+            text-underline-position: under;
+        }
+    }
+    &-tt{
+        @include fz-28;
+        font-weight: 700;
+        color: var(--color-pri);
+        font-family: var(--font-sec);
+        @include lc(2);
+    }
+    &-list{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.2rem;
+    }
+    &-item{
+        .txt{
+            color: #7F857C;
+            .text{
+                color: var(--color-text);
+            }
+            .bold{
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+.errorpg{
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    padding-top: var(--dist100);
+    &-bg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: linear-gradient(180deg, #F7F6F2 50%, #DCE5C8 100%);
+        .inner{
+            width: 100%;
+            height: 100%;
+            img{
+                @include imgcv;
+            }
+        }
+    }
+    &-title{
+        max-width: 36%;
+        img{
+            width: 100%;
+            display: block;
+        }
+    }
+    &-img{
+        width: 100%;
+        .inner{
+            width: 100%;
+            img{
+                width: 100%;
+                display: block;
+            }
+        }
+    }
+
+    &-inner{
+        @include flex-col;
+        align-items: center;
+        gap: var(--dist24);
+        text-align: center;
+        .desc{
+            max-width: 80rem;
+        }
+    }
+}
+
+
+.csbm{
+    position: relative;
+    margin: var(--dist80) 0;
+    &-row{
+        --cgap: var(--dist40);
+        --rgap: var(--dist40);
+    }
+    &-col{
+        @include max(1000px){
+            width: 100%;
+            &:nth-child(2){
+                order: -1;
+            }
+        }
+    }
+    &-desc{
+        &-inner{
+            @include flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.2rem;
+            padding-top: 1.6rem;
+            margin-top: 1.6rem;
+            border-top: .1rem solid var(--border);
+            .social{
+                .txt{
+                    display: none;
+                }
+            }
+        }
+    }
+    &-tag{
+        @include flex-wr;
+        gap: 1.2rem;
+        align-items: center;
+
+        .txt{
+            font-weight: 700
+        }
+        &-list{
+            @include flex-wr;
+            gap: .8rem;
+            .tag{
+                padding: .7rem 1.6rem;
+                background-color: var(--color-third);
+                border-radius: 3rem;
+                transition: all .3s ease;
+                @include hover{
+                    background-color: var(--color-pri);
+                    color: var(--white);
+                }
+            }
+        }
+    }
+}
