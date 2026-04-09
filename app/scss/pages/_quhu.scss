@@ -1,0 +1,146 @@
+.planbox {
+  .planbox-inner {
+    --cg: 0;
+    --rg: 0;
+    background-color: var(--color-third);
+    border-radius: 1.2rem;
+    position: relative;
+    padding: 0 1.2rem;
+    @include max(1200px) {
+        overflow: hidden;
+    }
+    .swiper {
+      overflow: visible;
+      width: 100%;
+      .swiper-slide {
+        // margin-right: 0 !important;
+      }
+    }
+  }
+  .planbox-wrapper {
+    overflow: hidden;
+    @include min(1201px) {
+      padding-bottom: 2rem;
+    }
+  }
+}
+
+.plan-card {
+  height: 100%;
+  flex: 1;
+  padding: 4rem 2rem;
+  border-radius: 1.2rem;
+  color: #333;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  background-color: var(--color-third);
+  border-bottom: 0.6rem solid transparent;
+
+  .plan-header {
+    margin-bottom: 2rem;
+
+    .txt {
+      color: var(--color-pri);
+      margin-bottom: 1.2rem;
+      transition: color 0.3s ease;
+      @include fz-28;
+      @include fontsec;
+      font-weight: 700;
+    }
+
+    .price-badge {
+      display: inline-block;
+      background-color: var(--color-second);
+      color: #333;
+      padding: 0.4rem 1.6rem;
+      border-radius: 2rem;
+      font-weight: bold;
+      font-size: 1.4rem;
+    }
+
+    .price {
+      font-weight: 800;
+      color: var(--color-second);
+      line-height: 1;
+      @include fz-40;
+    }
+  }
+
+  .plan-desc {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    // flex-grow: 1;
+  }
+
+  .plan-features {
+    list-style: none;
+    border-top: 0.1rem dashed rgba(82, 114, 53, 0.5);
+    padding-top: 1rem;
+    margin-top: 1rem;
+    // flex-grow: 1;
+
+    li {
+      font-size: 1.4rem;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+
+      .icon {
+        color: var(--color-pri);
+        font-weight: bold;
+        transition: color 0.3s ease;
+      }
+    }
+  }
+
+  // Hiệu ứng Hover
+
+  &.active {
+    background-color: var(--color-pri);
+    color: #fff;
+    transform: translateY(2rem);
+    z-index: 2;
+    border-bottom-color: var(--color-second);
+
+    .plan-header {
+      .txt {
+        color: #fff;
+      }
+    }
+    .plan-features {
+      border-color: rgba(220, 229, 200, 0.5);
+      li .icon {
+        color: var(--color-second);
+      }
+    }
+  }
+  @include hover {
+    background-color: var(--color-pri);
+    color: #fff;
+    transform: translateY(2rem);
+    z-index: 2;
+    border-bottom-color: var(--color-second);
+
+    .plan-header {
+      .txt {
+        color: #fff;
+      }
+    }
+    .plan-features {
+      border-color: rgba(220, 229, 200, 0.5);
+      li .icon {
+        color: var(--color-second);
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .plan-card {
+    padding: 1rem;
+  }
+}
