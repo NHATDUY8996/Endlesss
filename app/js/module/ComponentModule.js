@@ -129,9 +129,8 @@ export default function ComponentModule() {
         const getHeightItems = document.querySelectorAll(".getHeight");
         if (getHeightItems) {
             getHeightItems.forEach((item) => {
-                item.style = `--height:${
-                    item.getBoundingClientRect().height
-                }px`;
+                item.style = `--height:${item.getBoundingClientRect().height
+                    }px`;
             });
         }
     }
@@ -215,16 +214,14 @@ export default function ComponentModule() {
         if (cir.classList.contains("cir-2")) {
             const translateX = Math.floor(Math.random() * x);
             const translateY = Math.floor(Math.random() * y);
-            cir.style.transfrm = `translate(${
-                translateX + "%" + "," + translateY + "%"
-            })`;
+            cir.style.transfrm = `translate(${translateX + "%" + "," + translateY + "%"
+                })`;
         } else {
             // const translateX = Math.floor(Math.random() * 10);
             const translateY = Math.floor(Math.random() * y);
             // cir.style.transfrm = `translate(${translateX + "%" + "," + translateY + "%"})`;
-            cir.style.transfrm = `translate(${
-                0 + "%" + "," + -translateY + "%"
-            })`;
+            cir.style.transfrm = `translate(${0 + "%" + "," + -translateY + "%"
+                })`;
         }
     }
     for (let i = 0; i < cirs.length; i++) {
@@ -483,4 +480,85 @@ export default function ComponentModule() {
             });
         });
     }
+
+    // ============= Quhu ===================
+    // 1. Chọn tất cả các table nằm trong .mona-content
+    const tables = document.querySelectorAll('.mona-content table');
+    if (tables) {
+        // 2. Duyệt qua từng table
+        tables.forEach(table => {
+            // Tạo một thẻ div mới
+            const wrapper = document.createElement('div');
+            // Thêm class 'table-over' cho thẻ div vừa tạo
+            wrapper.className = 'table-over';
+
+            // Chèn thẻ div mới vào vị trí ngay trước thẻ table trong DOM
+            table.parentNode.insertBefore(wrapper, table);
+
+            // Chuyển thẻ table vào bên trong thẻ div bọc ngoài
+            wrapper.appendChild(table);
+        });
+    }
+
+
+    const speed = 300;
+    // NẾU CÓ ĐỊA CHỈ ID TRÊN THANH URL THÌ SCROLL XUỐNG
+    const hash = window.location.hash;
+    if ($(hash).length) scrollToID(hash, speed);
+    // TÌM ĐỊA CHỈ ID VÀ SCROLL XUỐNG NẾU CÓ CLASS
+    $('.dest-infor__control').on('click', function (e) {
+        e.preventDefault();
+
+        const href = $(this).find('> a').attr('href') || $(this).attr('href');
+        const id = href.slice(href.lastIndexOf('#'));
+        if ($(id).length) {
+            scrollToID(id, speed);
+        } else {
+            // window.location.replace(/${id});
+            window.location.href = href;
+        }
+    });
+    // HÀM SCROLL CHO MƯỢT MÀ
+    function scrollToID(id, speed) {
+        const offSet = $('.hd').outerHeight();
+        const section = $(id).offset();
+        const targetOffset = section.top - offSet - 0;
+        $('html,body').animate({ scrollTop: targetOffset }, speed);
+    }
+
+
+
+    const controls = document.querySelector('.dest-infor__controls');
+
+    if (!controls) return;
+    const windt = window.innerWidth < 768
+    if (windt) {
+        const rect = controls.getBoundingClientRect();
+        const absoluteTop = rect.top + window.scrollY - 70;
+
+        console.log("👉 Vị trí chính xác cách đỉnh trang là:", absoluteTop);
+
+        window.addEventListener('scroll', function () {
+            if (window.scrollY >= absoluteTop) {
+                controls.classList.add('fixed');
+            } else {
+                controls.classList.remove('fixed');
+            }
+        });
+    } else {
+        const rect = controls.getBoundingClientRect();
+        const absoluteTop = rect.top + window.scrollY - 60;
+
+        console.log("👉 Vị trí chính xác cách đỉnh trang là:", absoluteTop);
+
+        window.addEventListener('scroll', function () {
+            if (window.scrollY >= absoluteTop) {
+                controls.classList.add('fixed');
+            } else {
+                controls.classList.remove('fixed');
+            }
+        });
+    }
+
+
 }

@@ -7,7 +7,7 @@
     position: relative;
     padding: 0 1.2rem;
     @include max(1200px) {
-        overflow: hidden;
+      overflow: hidden;
     }
     .swiper {
       overflow: visible;
@@ -142,5 +142,388 @@
 @media (max-width: 1200px) {
   .plan-card {
     padding: 1rem;
+  }
+}
+
+// ===============================
+.bg-third {
+  background-color: var(--color-third);
+}
+.bg-pri {
+  background-color: var(--color-pri);
+}
+.title-head {
+  &.left {
+    align-items: start !important;
+    text-align: left;
+    max-width: unset;
+  }
+  &.white {
+    .title-pri {
+      color: white;
+    }
+  }
+}
+.dest-bn {
+  position: relative;
+  overflow: hidden;
+  .bg {
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    &::after {
+      pointer-events: none;
+      @include pseudo;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(247, 246, 242, 0) 25%,
+        #fff 100%
+      );
+    }
+  }
+  .tour-head {
+    min-height: calc(480 / 1728 * 100vw);
+    padding-top: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+  }
+  + .tour-wr {
+    padding-top: 8rem;
+    .filter-slider {
+      margin: 0 auto;
+      margin-bottom: 3.2rem;
+    }
+  }
+}
+.dest-infor {
+  --farTop:6rem;
+  @include max(768px) {
+    --farTop:3.15rem;
+  }
+  @keyframes showControl {
+    0% {
+      opacity: 0;
+      transform: translateX(-50%) translateY(-100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+  &__controls {
+    position: relative;
+    height: var(--farTop);
+    transition: 0.4s;
+    &.fixed {
+      .dest-infor__fixed {
+        &::before {
+          @include pseudo;
+          background-color: white;
+          width: 100vw;
+          height: calc(100% + 0.2rem);
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: -0.2rem;
+          z-index: -1;
+        }
+        top: var(--size-sc);
+        position: fixed;
+        left: 0;
+        width: 100vw;
+        padding: 0 1.5rem;
+        @include min(1201px) {
+          width: calc(var(--ctn) - 3rem);
+          padding: 0;
+        }
+        left: 50%;
+        transform: translateX(-50%);
+        // animation: showControl 1s linear forwards;
+        z-index: 100;
+      }
+    }
+    &::after {
+      @include pseudo;
+      bottom: 0;
+      left: 0;
+      height: 0.2rem;
+      width: 100%;
+      background-color: var(--color-third);
+    }
+    .swiper {
+      --cgap: 0.2rem;
+      --rgap: 0.2rem;
+      &-slide {
+        width: fit-content;
+        margin-bottom: 0;
+        @include min(701px) {
+          flex: 1;
+        }
+      }
+    }
+  }
+  &__control {
+    width: 100%;
+    padding: 1.8rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+    border-radius: 0.4rem 0.4rem 0 0;
+    position: relative;
+    @include max(768px) {
+      padding: 0.5rem 1rem;
+    }
+    &::after {
+      @include pseudo;
+      width: 100%;
+      height: 0.2rem;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var(--color-pri);
+      z-index: 2;
+      width: 0;
+      transition: 0.4s;
+    }
+    cursor: pointer;
+    @include hover {
+      background-color: var(--color-third);
+      color: var(--color-pri);
+    }
+    &.active {
+      background-color: var(--color-third);
+      color: var(--color-pri);
+      font-weight: 700;
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+  &__panel {
+    .flex {
+      padding-top: 10rem;
+
+      .left {
+        width: calc(5 / 12 * 100%);
+        .title-head {
+          margin-bottom: 0;
+          @include min(1201px) {
+            align-items: start;
+            margin-bottom: 2.4rem;
+          }
+        }
+      }
+      .right {
+        width: calc(7 / 12 * 100%);
+      }
+      @include max(1200px) {
+        padding-top: 4rem;
+        flex-direction: column;
+        .left {
+          width: 100%;
+        }
+        .right {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+.dest-thing {
+  &__list {
+  }
+  &__item {
+    height: 100%;
+    .inner {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      transition: 0.4s;
+      @include hover {
+        transform: scale(1.02);
+      }
+      .img {
+        &-inner {
+          @include imgPd(180, 286);
+          border-radius: 1.2rem;
+          img {
+            @include imgCover;
+          }
+        }
+      }
+      .info {
+        &-tt {
+          transition: 0.4s;
+          @include hover {
+            color: var(--color-pri);
+          }
+        }
+      }
+    }
+  }
+}
+.dest-how {
+  &__list {
+  }
+  &__item {
+    height: 100%;
+    .inner {
+      height: 100%;
+      background-color: var(--color-third);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 1.2rem;
+      gap: 1rem;
+      padding: 2.8rem;
+      transition: 0.4s;
+      @include hover {
+        transform: scale(1.02);
+      }
+      .icon {
+        aspect-ratio: 1;
+        width: 8rem;
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: contain;
+          display: block;
+        }
+      }
+      .txt {
+        @include fz-28;
+        font-weight: 700;
+        @include fontsec;
+        color: var(--color-pri);
+      }
+    }
+  }
+}
+.dest-why {
+  .flex {
+    .flex-left {
+      width: calc(5 / 12 * 100%);
+    }
+    .flex-right {
+      width: calc(7 / 12 * 100%);
+    }
+    @include max(768px) {
+      .flex-left {
+        width: 100%;
+        .title-head {
+          align-items: center !important;
+        }
+      }
+      .flex-right {
+        width: 100%;
+      }
+    }
+  }
+  &__list {
+    .col {
+      width: 50%;
+    }
+  }
+  &__item {
+    height: 100%;
+    .img {
+      transition: 0.4s;
+      @include hover {
+        transform: scale(1.02);
+      }
+      &-inner {
+        @include imgPd(236, 336);
+        border-radius: 1.2rem;
+        img {
+          @include imgCover;
+        }
+      }
+    }
+  }
+}
+.mona-content {
+  .table-over {
+    overflow-x: auto;
+    max-width: 120rem;
+  }
+  table {
+    border-radius: 1rem;
+    overflow: hidden;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    background-color: rgba(
+      255,
+      255,
+      255,
+      0.7
+    ); // Nền hơi trong suốt để hòa hợp với background sọc phía sau
+    font-size: 1.4rem;
+
+    th,
+    td {
+      padding: 1.5rem 2.5rem;
+      position: relative;
+      border: none !important;
+
+      // Tạo vạch dọc mờ và ngắn phân cách giữa các cột (Trừ cột đầu tiên)
+      &:not(:first-child)::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 35%; // Chiều cao vạch kẻ ngắn hơn thẻ
+        width: 0.1rem;
+        background-color: rgba(0, 0, 0, 0.15);
+      }
+    }
+
+    thead {
+      background-color: var(--color-second);
+
+      th {
+        font-weight: 700;
+        color: #222;
+        text-transform: uppercase;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+    }
+
+    tbody {
+      tr {
+        border-bottom: 0.2rem solid var(--color-pri); // Viền ngang màu xanh đậm
+        transition: background-color 0.2s ease;
+
+        // Đổi màu nền nhẹ khi hover vào hàng
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        // Xóa viền ngang ở hàng cuối cùng
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+
+      td {
+        color: #333;
+      }
+    }
   }
 }

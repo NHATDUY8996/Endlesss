@@ -373,4 +373,9 @@ export default function SwiperModule() {
             },
         },
     });
+    functionSlider(".dest-infor__controls", {
+        speed: 1200,
+        slidesPerView: "auto",
+        spaceBetween: 0,
+    });
 }

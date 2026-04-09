@@ -1,0 +1,242 @@
+extends layout/layout
+block vars
+    -title = 'Destination'
+    -mainClass = 'page-destination'
+    -bodyClass = ''
+    -hdClass = ''
+
+block container
+    section.sec-tour
+        .tour
+            .dest-bn
+                .bg 
+                    +img("quhu-bn1.jpg")
+                .container 
+                    .tour-head
+                        +breadCrumb([{txt: "Destinations"},{txt:"Central Highlands"}])
+                        +ttp("Central Highlands",
+                            "",
+                            "t-cpri f-100 t-upper txt-spl",
+                            "")
+            .tour-wr 
+                .container 
+                    +filterSlider("", [
+                        {txt: "All Tours"},
+                        {txt: "Da Lat"},
+                        {txt: "Buon Me Thuot"},
+                        {txt: "Pleiku"},
+                        {txt: "Kontum"},
+                        {txt: "K'Bang"},
+                    ])
+                    .tour-bdy 
+                        .tour-row.row.row-3
+                            - 
+                                const arrs = [
+                                    {
+                                    imgtag: "Quang Tri",
+                                    img: "pduct-1.jpg",
+                                    tag: "Phong Nha Local Guide Collective",
+                                    title: "Phong Nha Sunset & Cave Adventure"},
+                                    {
+                                    imgtag: "Da Nang",
+                                    img: "pduct-2.jpg",
+                                    tag: "Pineapple Lantern Workshop",
+                                    title: "Hoi An Lantern Craft & Old Town Walk"
+                                    },
+                                    {
+                                    imgtag: "Hue",
+                                    img: "pduct-3.jpg",
+                                    tag: "Hue Local Riders",
+                                    title: "Hue Street Food & Heritage Ride"
+                                    },
+                                    {
+                                    imgtag: "Quang Tri",
+                                    img: "pduct-4.jpg", 
+                                    tag: "Netin Travel",
+                                    title: "Historical Dong Hoi: From War to Peace"
+                                    },
+                                    {
+                                    imgtag: "Ho Chi Minh City",
+                                    img: "pduct-5.jpg",
+                                    tag: "Con Dao Dive Center",
+                                    title: "Diving the Coral Reefs of Bay Canh"
+                                    },
+                                    {
+                                    imgtag: "Dak Lak",
+                                    img: "pduct-6.jpg",
+                                    tag: "Lak Tented Camp",
+                                    title: "Gong Culture & Coffee Harvest Workshop"
+                                    }
+                                ]
+                            each arr in arrs
+                                .tour-col.col.col-4
+                                    .pduct
+                                        .pduct-img 
+                                            .pduct-img-inner 
+                                                +img(arr.img)
+                                        .pduct-tag
+                                            p.tag
+                                                +img("location.png")
+                                                = arr.imgtag
+                                        .pduct-desc
+                                            .pduct-desc-inner
+                                                p.pduct-desc-tag= arr.tag
+                                                h3.pduct-tt
+                                                    a.link(href="")= arr.title
+                                                ul.pduct-list 
+                                                    li.pduct-item
+                                                        span.txt Adult 
+                                                            span.text 
+                                                                span.bold  $95
+                                                                |/person
+                                                    li.pduct-item
+                                                        span.txt Child 
+                                                            span.text
+                                                                span.bold  $75
+                                                                |/person
+                                            .pduct-btn
+                                                +btn("Explore the Tour","btn-pri btn-icon btn-main","","next.png","","")
+
+                        +pagination()
+    section.dest-infor.mg-80#sec-info 
+        .container 
+            .title-head 
+                +ttp("More information",
+                    "",
+                    "t-cpri t-upper txt-spl",
+                    "") 
+            .dest-infor__tabs.tabJS       
+                .dest-infor__controls 
+                    .dest-infor__fixed
+                        .swiper.row 
+                            .swiper-wrapper
+                                .swiper-slide.col       
+                                    a(href="#sec-info").dest-infor__control.tabBtn   Experiences  
+                                .swiper-slide.col     
+                                    a(href="#sec-info").dest-infor__control.tabBtn   Overview    
+                                .swiper-slide.col     
+                                    a(href="#sec-info").dest-infor__control.tabBtn   Weather    
+                                .swiper-slide.col       
+                                    a(href="#sec-info").dest-infor__control.tabBtn   Activities  
+                                .swiper-slide.col       
+                                    a(href="#sec-info").dest-infor__control.tabBtn   Transportation 
+                                .swiper-slide.col   
+                                    a(href="#sec-info").dest-infor__control.tabBtn   Features      
+                .dest-infor__panels 
+                    .dest-infor__panel.tabPanel 
+                        .flex.row 
+                            .left.col 
+                                .wrapper 
+                                    .title-head 
+                                        p.title-tag(data-aos="zoom-in") Central Highlands
+                                        +ttp("overview",
+                                            "",
+                                            "t-cpri t-upper txt-spl",
+                                            "")
+                            .right.col 
+                                .wrapper 
+                                    .mona-content 
+                                        p The Central Highlands of Vietnam is a land of misty hills, deep forests, and rich cultural traditions. Home to diverse ethnic minority groups such as the Ede, Bahnar, Giarai (J'rai), K'hor, etc, this region offers travelers a rare chance to experience both stunning natural landscapes and authentic cultural encounters.
+                                        p Here, you’ll find vast coffee plantations, traditional villages, and national parks filled with wildlife and waterfalls. Whether you’re seeking adventure, relaxation, or cultural discovery, the Central Highlands promises a journey like no other.
+                                        p Looking for cultural workshops? Explore our Hoi An lantern-making class.
+                    .dest-infor__panel.tabPanel 
+                    .dest-infor__panel.tabPanel 
+                    .dest-infor__panel.tabPanel 
+                    .dest-infor__panel.tabPanel 
+                    .dest-infor__panel.tabPanel 
+    section.dest-weather.pd-80.bg-third 
+        .container 
+            .title-head.left.mb-32 
+                p.title-tag(data-aos="zoom-in") Central Highlands
+                +ttp("Weather in the Central Highlands",
+                    "",
+                    "t-cpri t-upper txt-spl",
+                    "")
+            .mona-content 
+                p  The Central Highlands enjoys moderate weather all year, but seasons shape your experience:
+                ul
+                    li 
+                        strong Dry season (Nov – Apr):
+                        | Crisp mornings, mild days (15–25°C). Ideal for trekking, coffee tours, and cultural exploration
+                    li 
+                        strong Rainy season (May – Oct):
+                        | Frequent showers, muddy trails, lush scenery. Adventurous but challenging.
+                    li 
+                        strong Best time to visit:
+                        | December – March, when flowers bloom, skies are clear, and the air is fresh.
+                table
+                    thead
+                        tr
+                            th MONTH
+                            th TEMP (°C)
+                            th RAINFALL
+                            th NOTES
+                    tbody
+                        - for (var i = 0; i < 6; i++)
+                            tr
+                            td Jan–Feb
+                            td 21–23
+                            td Very low
+                            td Cool & dry; perfect for hiking and coffee tours.
+    section.dest-thing.mg-80 
+        .container 
+            .title-head.left.mb-32 
+                p.title-tag(data-aos="zoom-in") Central Highlands
+                +ttp("Weather in the Central Highlands",
+                    "",
+                    "t-cpri t-upper txt-spl",
+                    "")    
+            .dest-thing__list.row.row-4 
+                each val,index in Array(7)
+                    .col(data-aos="fade-up")
+                        .dest-thing__item 
+                            .inner 
+                                .img 
+                                    a(href="").img-inner
+                                        +img(`quhu-thing${index+1}.jpg`)  
+                                .info 
+                                    h4
+                                        a(href="").info-tt   Learn to make and enjoy traditional coffee at a local farm.           
+    section.dest-how.pd-80.bg-pri 
+        .container 
+            .title-head.left.mb-32.white 
+                p.title-tag(data-aos="zoom-in") Central Highlands
+                +ttp("How to get to the Central Highlands?",
+                    "",
+                    "t-cpri t-upper txt-spl",
+                    "")          
+            .dest-how__list.row.row-3
+                each val,index in Array(6)
+                    .col(data-aos="fade-up")
+                        .dest-how__item 
+                            .inner 
+                                .icon 
+                                    +img(`quhu-ic${index+1}.svg`)
+                                p.txt Airport
+                                p.desc  Đắk Lắk Province      
+    section.dest-why.mg-80 
+        .container 
+            .flex.row 
+                .flex-left.col 
+                    .wrapper 
+                        .title-head.left.mb-32 
+                            p.title-tag(data-aos="zoom-in") Central Highlands
+                            +ttp("Why the Central Highlands?",
+                                "",
+                                "t-cpri t-upper txt-spl",
+                                "")          
+                .flex-right.col 
+                    .wrapper 
+                        .mona-content 
+                            p The Central Highlands isn’t just a stopover—it’s a chance to discover Vietnam’s soul through nature and culture. With cool mountain air, legendary coffee, and warm-hearted communities, this region is perfect for travelers looking beyond the classic tourist trail.
+                            p The Central Highlands isn’t just a stopover—it’s a chance to discover Vietnam’s soul through nature and culture. With cool mountain air, legendary coffee, and warm-hearted communities, this region is perfect for travelers looking beyond the classic tourist trail.
+                        .dest-why__list.row
+                            each val,index in Array(4)
+                                .col(data-aos="fade-up") 
+                                    .dest-why__item 
+                                        .img 
+                                            a(href=`./assets/images/quhu-why${index+1}.jpg` data-fancybox="gallery").img-inner 
+                                                +img(`quhu-why${index+1}.jpg`)
+
+    +thumb()
+                    
