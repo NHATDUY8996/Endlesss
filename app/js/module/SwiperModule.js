@@ -4,10 +4,7 @@ export default function SwiperModule() {
         if (swiperSlider.length > 0) {
             swiperSlider.forEach((item) => {
                 const swiper = item.querySelector(".swiper");
-                const pagi =
-                    typePagi === "scrollbar"
-                        ? item.querySelector(".swiper-scrollbar")
-                        : item.querySelector(".swiper-pagination");
+                const pagi = typePagi === "scrollbar" ? item.querySelector(".swiper-scrollbar") : item.querySelector(".swiper-pagination");
                 const next = item.querySelector(".swiper-next");
                 const prev = item.querySelector(".swiper-prev");
 
@@ -52,9 +49,7 @@ export default function SwiperModule() {
                 // Kiểm tra và ẩn nút điều hướng nếu số lượng slide không vượt quá slidesPerView
                 function toggleNavigationButtons() {
                     const totalSlides = slide.slides.length;
-                    const visibleSlides = slide.slidesPerViewDynamic
-                        ? slide.slidesPerViewDynamic()
-                        : 1;
+                    const visibleSlides = slide.slidesPerViewDynamic ? slide.slidesPerViewDynamic() : 1;
 
                     if (totalSlides <= visibleSlides) {
                         if (next) next.style.display = "none";
@@ -71,13 +66,9 @@ export default function SwiperModule() {
                 slide.init();
 
                 // Tìm và cuộn tới slide chứa .swiper-btn.active
-                const activeSlide = item.querySelector(
-                    ".swiper-slide .swiper-btn.active",
-                );
+                const activeSlide = item.querySelector(".swiper-slide .swiper-btn.active");
                 if (activeSlide) {
-                    const activeSlideIndex = Array.from(slide.slides).findIndex(
-                        (s) => s.contains(activeSlide),
-                    );
+                    const activeSlideIndex = Array.from(slide.slides).findIndex((s) => s.contains(activeSlide));
                     if (activeSlideIndex !== -1) {
                         slide.slideTo(activeSlideIndex, 0);
                     }
@@ -104,12 +95,7 @@ export default function SwiperModule() {
         return swiperInstances;
     }
 
-    function functionMainSlider(
-        element,
-        thumbSliderInstances,
-        customizeOption,
-        typePagi,
-    ) {
+    function functionMainSlider(element, thumbSliderInstances, customizeOption, typePagi) {
         const swiperSlider = document.querySelectorAll(element);
 
         if (swiperSlider) {
@@ -146,12 +132,7 @@ export default function SwiperModule() {
         }
     }
 
-    function functionSliderGrid(
-        element,
-        customizeOption,
-        typePagi,
-        totalSlides,
-    ) {
+    function functionSliderGrid(element, customizeOption, typePagi, totalSlides) {
         const swiperSliders = document.querySelectorAll(element);
         if (swiperSliders) {
             swiperSliders.forEach((slider) => {
@@ -164,8 +145,7 @@ export default function SwiperModule() {
                 }
 
                 // Tính số hàng dựa trên số lượng slide của slider hiện tại
-                const slideCount =
-                    slider.querySelectorAll(".swiper-slide").length;
+                const slideCount = slider.querySelectorAll(".swiper-slide").length;
                 const rows = slideCount < totalSlides ? 1 : 2;
 
                 var slide = new Swiper(swiper, {
@@ -345,4 +325,41 @@ export default function SwiperModule() {
         },
         "fraction",
     );
+
+    functionSlider(".tour-relate-slider", {
+        speed: 1200,
+        slidesPerView: 1,
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+            },
+            501: {
+                slidesPerView: 2,
+            },
+            901: {
+                slidesPerView: 3,
+            },
+            1201: {
+                slidesPerView: 1,
+            },
+        },
+    });
+    functionSlider(".nav-tab-swiper", {
+        speed: 1200,
+        slidesPerView: "auto",
+        // breakpoints: {
+        //     0: {
+        //         slidesPerView: 1,
+        //     },
+        //     501: {
+        //         slidesPerView: 2,
+        //     },
+        //     901: {
+        //         slidesPerView: 3,
+        //     },
+        //     901: {
+        //         slidesPerView: 1,
+        //     },
+        // },
+    });
 }
