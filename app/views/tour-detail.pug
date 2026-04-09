@@ -91,23 +91,25 @@ block container
                                     .tourdt-content.mt-40
                                         .inner 
                                             .title-40.mb-32 more infomation
-                                            .nav-tab.nav-tab-swiper.mb-32
-                                                +swiper 
-                                                    .swiper-slide 
-                                                        a(href="#overview").nav-tab-item.tabBtn.active
-                                                            span.txt Overview
-                                                    .swiper-slide 
-                                                        a(href="#itinerary").nav-tab-item.tabBtn 
-                                                            span.txt Itinerary
-                                                    .swiper-slide 
-                                                        a(href="#pricing").nav-tab-item.tabBtn 
-                                                            span.txt Pricing
-                                                    .swiper-slide 
-                                                        a(href="#what-to-bring").nav-tab-item.tabBtn 
-                                                            span.txt What to bring
-                                                    .swiper-slide 
-                                                        a(href="#faqs").nav-tab-item.tabBtn 
-                                                            span.txt FAQs
+                                            .dest-infor__controls
+                                                .dest-infor__fixed.mb-32.dest-infor__fixed
+                                                    .swiper.row
+                                                        .swiper-wrapper
+                                                            .swiper-slide.col
+                                                                a(href="#overview").dest-infor__control.active
+                                                                    | Overview
+                                                            .swiper-slide.col
+                                                                a(href="#itinerary").dest-infor__control 
+                                                                    | Itinerary
+                                                            .swiper-slide.col
+                                                                a(href="#pricing").dest-infor__control 
+                                                                    | Pricing
+                                                            .swiper-slide.col
+                                                                a(href="#what-to-bring").dest-infor__control 
+                                                                    | What to bring
+                                                            .swiper-slide.col
+                                                                a(href="#faqs").dest-infor__control 
+                                                                    | FAQs
                                             .tourdt-content-block
                                                 .tourdt-content-panel#overview
                                                     .content-box 

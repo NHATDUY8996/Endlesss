@@ -44,13 +44,9 @@ export default function ComponentModule() {
                 let isExpanded = false;
                 seeMoreBtn.addEventListener("click", () => {
                     isExpanded = !isExpanded;
-                    targetP.textContent = isExpanded
-                        ? targetP.getAttribute("data-full")
-                        : targetP.getAttribute("data-short");
+                    targetP.textContent = isExpanded ? targetP.getAttribute("data-full") : targetP.getAttribute("data-short");
 
-                    seeMoreBtn.textContent = isExpanded
-                        ? " Thu gọn"
-                        : " Xem thêm";
+                    seeMoreBtn.textContent = isExpanded ? " Thu gọn" : " Xem thêm";
                     targetP.after(seeMoreBtn);
                 });
             }
@@ -129,9 +125,7 @@ export default function ComponentModule() {
         const getHeightItems = document.querySelectorAll(".getHeight");
         if (getHeightItems) {
             getHeightItems.forEach((item) => {
-                item.style = `--height:${
-                    item.getBoundingClientRect().height
-                }px`;
+                item.style = `--height:${item.getBoundingClientRect().height}px`;
             });
         }
     }
@@ -156,16 +150,10 @@ export default function ComponentModule() {
         $(el).each(function () {
             let el = this;
             let itemTop = $(el).offset().top;
-            if (
-                $(el).hasClass("custom-fadeInUpBig") ||
-                $(el).hasClass("custom-bounceInUp")
-            ) {
+            if ($(el).hasClass("custom-fadeInUpBig") || $(el).hasClass("custom-bounceInUp")) {
                 itemTop = $(el).offset().top - 2000;
             }
-            if (
-                $(el).hasClass("custom-fadeInDownBig") ||
-                $(el).hasClass("custom-bounceInDown")
-            ) {
+            if ($(el).hasClass("custom-fadeInDownBig") || $(el).hasClass("custom-bounceInDown")) {
                 itemTop = $(el).offset().top + 2000;
             }
 
@@ -184,10 +172,7 @@ export default function ComponentModule() {
             if ($(el).hasClass("custom-backInDown")) {
                 itemTop = $(el).offset().top + 1200;
             }
-            if (
-                itemTop <
-                $(window).scrollTop() + ($(window).height() / 10) * 8
-            ) {
+            if (itemTop < $(window).scrollTop() + ($(window).height() / 10) * 8) {
                 $(el).addClass(className);
             }
         });
@@ -215,16 +200,12 @@ export default function ComponentModule() {
         if (cir.classList.contains("cir-2")) {
             const translateX = Math.floor(Math.random() * x);
             const translateY = Math.floor(Math.random() * y);
-            cir.style.transfrm = `translate(${
-                translateX + "%" + "," + translateY + "%"
-            })`;
+            cir.style.transfrm = `translate(${translateX + "%" + "," + translateY + "%"})`;
         } else {
             // const translateX = Math.floor(Math.random() * 10);
             const translateY = Math.floor(Math.random() * y);
             // cir.style.transfrm = `translate(${translateX + "%" + "," + translateY + "%"})`;
-            cir.style.transfrm = `translate(${
-                0 + "%" + "," + -translateY + "%"
-            })`;
+            cir.style.transfrm = `translate(${0 + "%" + "," + -translateY + "%"})`;
         }
     }
     for (let i = 0; i < cirs.length; i++) {
@@ -264,17 +245,11 @@ export default function ComponentModule() {
             toggleButton.addEventListener("click", function () {
                 const iframeSrc = videoFrame.getAttribute("src");
                 if (iframeSrc.includes("autoplay=1")) {
-                    videoFrame.setAttribute(
-                        "src",
-                        iframeSrc.replace("autoplay=1", "autoplay=0"),
-                    );
+                    videoFrame.setAttribute("src", iframeSrc.replace("autoplay=1", "autoplay=0"));
                     img.style.display = "block";
                     toggleButton.style.display = "block";
                 } else {
-                    videoFrame.setAttribute(
-                        "src",
-                        iframeSrc.replace("autoplay=0", "autoplay=1"),
-                    );
+                    videoFrame.setAttribute("src", iframeSrc.replace("autoplay=0", "autoplay=1"));
                     toggleButton.textContent = `<i class="fa-regular fa-circle-pause"></i>`;
                     img.style.display = "none";
                     toggleButton.style.display = "none";
@@ -352,9 +327,7 @@ export default function ComponentModule() {
             if (!headerfixed) return;
             const headerRect = headerfixed.getBoundingClientRect();
             const exproductRect = exproductFixed.getBoundingClientRect();
-            const footerRect = footerfixed
-                ? footerfixed.getBoundingClientRect()
-                : null;
+            const footerRect = footerfixed ? footerfixed.getBoundingClientRect() : null;
 
             // Nếu footer chạm hoặc vượt đáy header thì xóa sticky
             if (footerRect && footerRect.top <= headerRect.bottom) {
@@ -412,8 +385,7 @@ export default function ComponentModule() {
 
                         const randomTop = Math.floor(Math.random() * 80) + 10;
                         const randomLeft = Math.floor(Math.random() * 95);
-                        const randomHeight =
-                            Math.floor(Math.random() * 100) + 150;
+                        const randomHeight = Math.floor(Math.random() * 100) + 150;
                         const duration = Math.random() * 1 + 1;
 
                         span.style.cssText = `
@@ -474,13 +446,98 @@ export default function ComponentModule() {
                 recruitShare.classList.toggle("active");
             });
             document.addEventListener("click", function (e) {
-                if (
-                    !recruitShare.contains(e.target) &&
-                    !icon.contains(e.target)
-                ) {
+                if (!recruitShare.contains(e.target) && !icon.contains(e.target)) {
                     recruitShare.classList.remove("active");
                 }
             });
+        });
+    }
+
+    // ============= Quhu ===================
+    // 1. Chọn tất cả các table nằm trong .mona-content
+    const tables = document.querySelectorAll(".mona-content table");
+    if (tables) {
+        // 2. Duyệt qua từng table
+        tables.forEach((table) => {
+            // Tạo một thẻ div mới
+            const wrapper = document.createElement("div");
+            // Thêm class 'table-over' cho thẻ div vừa tạo
+            wrapper.className = "table-over";
+
+            // Chèn thẻ div mới vào vị trí ngay trước thẻ table trong DOM
+            table.parentNode.insertBefore(wrapper, table);
+
+            // Chuyển thẻ table vào bên trong thẻ div bọc ngoài
+            wrapper.appendChild(table);
+        });
+    }
+
+    const speed = 300;
+    // NẾU CÓ ĐỊA CHỈ ID TRÊN THANH URL THÌ SCROLL XUỐNG
+    const hash = window.location.hash;
+    if ($(hash).length) scrollToID(hash, speed);
+    // TÌM ĐỊA CHỈ ID VÀ SCROLL XUỐNG NẾU CÓ CLASS
+    $(".dest-infor__control").on("click", function (e) {
+        e.preventDefault();
+
+        const href = $(this).find("> a").attr("href") || $(this).attr("href");
+        const id = href.slice(href.lastIndexOf("#"));
+        if ($(id).length) {
+            scrollToID(id, speed);
+        } else {
+            // window.location.replace(/${id});
+            window.location.href = href;
+        }
+    });
+    // HÀM SCROLL CHO MƯỢT MÀ
+    function scrollToID(id, speed) {
+        const offSet = $(".hd").outerHeight();
+        const section = $(id).offset();
+        const targetOffset = section.top - offSet - 0;
+        $("html,body").animate({ scrollTop: targetOffset }, speed);
+    }
+
+    const controls = document.querySelector(".dest-infor__controls");
+    if (!controls) return;
+    const items = controls.querySelectorAll(".dest-infor__control");
+    if (items) {
+        items.forEach((item) => {
+            item.addEventListener("click", () => {
+                items.forEach((active2) => {
+                    items.forEach((item2) => {
+                        item2.classList.remove("active");
+                    });
+                });
+                item.classList.add("active");
+            });
+        });
+    }
+    const windt = window.innerWidth < 768;
+    if (windt) {
+        const rect = controls.getBoundingClientRect();
+        const absoluteTop = rect.top + window.scrollY - 70;
+
+        console.log("👉 Vị trí chính xác cách đỉnh trang là:", absoluteTop);
+
+        window.addEventListener("scroll", function () {
+            if (window.scrollY >= absoluteTop) {
+                controls.classList.add("fixed");
+            } else {
+                controls.classList.remove("fixed");
+            }
+        });
+    } else {
+        const rect = controls.getBoundingClientRect();
+        const absoluteTop = rect.top + window.scrollY - 60;
+
+        console.log("👉 Vị trí chính xác cách đỉnh trang là:", absoluteTop);
+
+        window.addEventListener("scroll", function () {
+            if (window.scrollY >= absoluteTop) {
+                controls.classList.add("fixed");
+            } else {
+                controls.classList.remove("fixed");
+            }
         });
     }
 }

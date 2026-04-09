@@ -362,4 +362,36 @@ export default function SwiperModule() {
         //     },
         // },
     });
+    functionSlider(".planbox", {
+        speed: 1200,
+        slidesPerView: 4,
+        spaceBetween: 0,
+        autoplay: {
+            delay: 8000,
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+                spaceBetween: 16,
+            },
+            501: {
+                slidesPerView: 2,
+                spaceBetween: 16,
+            },
+            901: {
+                slidesPerView: 3,
+                spaceBetween: 24,
+            },
+            1201: {
+                slidesPerView: 4,
+                spaceBetween: 0,
+            },
+        },
+    });
+
+    functionSlider(".dest-infor__controls", {
+        speed: 1200,
+        slidesPerView: "auto",
+        spaceBetween: 0,
+    });
 }
