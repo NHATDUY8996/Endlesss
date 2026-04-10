@@ -20,6 +20,7 @@ export default function QuhuScrollModule() {
                 scrollTrigger: {
                     trigger: item,
                     start: "top 50%",
+                    toggleClass: "active",
                     toggleActions: "play none none reverse"
                 }
             });

@@ -689,7 +689,16 @@
           justify-content: center;
           gap: 1rem;
           padding-left: 2.4rem;
-          border-left: 0.4rem solid var(--color-pri);
+          position: relative;
+          &::after {
+            @include pseudo;
+            width: 0.4rem;
+            height: 100%;
+            left: 0;
+            top: 0;
+            transition: 0.4s;
+            background-color: var(--color-pri);
+          }
           .num {
             @include fz-64;
             font-weight: 700;
@@ -733,7 +742,9 @@
 
         &-right {
           .content {
-            border-left-color: var(--color-second);
+            &::after {
+              background-color: var(--color-second);
+            }
             .sub {
               color: var(--color-pri);
             }
@@ -749,7 +760,6 @@
       .flex {
         gap: 1rem;
         &-left {
-
         }
         &-right {
           .content {
@@ -768,6 +778,29 @@
         }
         &-right {
           width: 100%;
+        }
+      }
+    }
+    @include min(1200px) {
+      .flex {
+        &-right {
+          .content {
+            &::after {
+              height: 0;
+              transition: 0.4s;
+            }
+          }
+        }
+      }
+      &.active {
+        .flex {
+          &-right {
+            .content {
+              &::after {
+                height: 100%;
+              }
+            }
+          }
         }
       }
     }
