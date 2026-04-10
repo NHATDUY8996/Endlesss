@@ -1,0 +1,91 @@
+extends layout/layout
+block vars
+    -title = 'How it works'
+    -mainClass = 'page-how'
+    -bodyClass = ''
+    -hdClass = ''
+
+block container
+    section.sec-tour
+        .tour.pd-100
+            .tour-bg 
+                .inner 
+                    +img("tour-bg.jpg")
+            .tour-wr 
+                .container 
+                    .tour-head.mb-64
+                        +breadCrumb([{txt: "How it works"}])
+                        +ttp("how it works",
+                            "",
+                            "t-cpri f-100 t-upper txt-spl",
+                            "")
+                        .mona-content 
+                            p Crafting your authentic Vietnam escape in 4 simple steps.
+    section.how-after.pd-80 
+        .container 
+            .title-head.white 
+                p.title-tag(data-aos="zoom-in") FAQs
+                +ttp("Frequently Asked Questions",
+                    "",
+                    "t-cpri t-upper txt-spl",
+                    "")
+                .mona-content 
+                    p Once you share your context, Mo personally weaves your selections into a comprehensive, high-end travel document. Here is what you will receive:
+            .how-after__list.row.row-4(data-aos="fade-up")
+                each val,index in Array(4)
+                    .col 
+                        .how-after__item 
+                            .inner 
+                                .icon 
+                                    +img(`quhu-ic-how${index+1}.svg`)
+                                h4.tt Detailed Itinerary PDF
+                                p.desc A day-by-day guide of your trip in Central Vietnam, Central Highlands and Con Dao Island, professionally organized based on your selected experiences.
+            .how-after__btn(data-aos="fade-up")
+                +btn("Start Building Your Journey","btn-sec btn-icon btn-main","","next.png","","")
+    section.how-zigzac.mg-80 
+        .bg 
+            +img("quhu-line.png")
+        .container 
+            .how-zigzac__list
+                each val,index in Array(4)
+                    .how-zigzac__item 
+                        .flex 
+                            .flex-left
+                                .model 
+                                    .buzzle 
+                                        .buzzle-in
+                                            +img(`quhu-buzzle${index+1}.png`)
+                                    .model-in
+                                        +img(`quhu-model${index+1}.png`)
+                            .flex-right
+                                .content 
+                                    p.num=`0${index+1}`
+                                    p.sub Explore & Select
+                                    h4.tt Browse our curated collection of local experiences.
+                                    p.desc Dive into a diverse range of mini-tours, from the imperial majesty of Hue to the tranquil waters of Trang An. We partner with top-tier local experts to bring you the most authentic activities, all in one place.
+    section.sec-faqs 
+        .faqs.pd-100
+            .faqs-bg
+                .inner
+                    +img("faqs-bg.jpg")
+            .container 
+                .faqs-wr 
+                    .faqs-head.title-head 
+                        p.title-tag(data-aos="zoom-in") FAQs
+                        +ttp("Frequently Asked Questions",
+                            "",
+                            "t-cpri t-upper txt-spl",
+                            "")
+                    .faqs-bdy.collapse-block(data-aos="fade-up")
+                        .faqs-list
+                            each val,index in Array(5)
+                                .faqs-item.collapse-item
+                                    .head.collapse-head 
+                                        .icon 
+                                            +img("faqs-icon.png")
+                                        .plus
+                                    h3.tt Is Endless Vietnam a travel agency?
+                                    .faqs-content.collapse-body 
+                                        .mona-content 
+                                            p While we focus on designing complete journeys, you can certainly start with one experience. However, the true "Endless Vietnam" magic happens when we design the flow between them for you.
+    +thumb()

@@ -24,6 +24,7 @@ import FaqModule from "./module/FaqModule.js";
 import InfiniteslideModule from "./module/InfiniteslideModule.js";
 import SetupFileInputs from "./module/SetupFileInputs.js";
 import RangeModule from "./module/RangeModule.js";
+import QuhuScrollModule from "./module/QuhuScrollModule.js";
 
 const VERSION = Date.now();
 
@@ -54,4 +55,5 @@ window.addEventListener("DOMContentLoaded", async () => {
     InfiniteslideModule();
     SetupFileInputs();
     RangeModule();
+    QuhuScrollModule();
 });
