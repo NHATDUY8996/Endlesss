@@ -26,7 +26,7 @@ block container
                                         .pduct-img-inner 
                                             +img(`pduct-${index + 1}.jpg`)
                         +swiperbtn()
-                    .tourdt-main.mt-64
+                    .tourdt-main.mt-64.scroll-target
                         .row 
                             .col-lf.col.col-8
                                 .col-lf-wr
@@ -195,7 +195,6 @@ block container
                                                                                 i.fa-solid.fa-angle-down 
                                                                         .cl-schedule-body.collapse-body
                                                                             p.text Meet up at Cagina Boutique Hostel & Coffee for a drink and the brief (124A Le Thanh Dong Street, Dong Hoi, Quang Binh). Pick up your bicycles. Enjoy a detailed briefing about the route and study the map to get better acquainted with the journey that lies ahead.
-
                                                 .tourdt-content-panel#pricing
                                                     .content-box 
                                                         .title.mb-24 Pricing
@@ -250,7 +249,26 @@ block container
                                                                         .faqs-content.collapse-body 
                                                                             .mona-content 
                                                                                 p While we focus on designing complete journeys, you can certainly start with one experience. However, the true "Endless Vietnam" magic happens when we design the flow between them for you.
-
+                                    .tourdt-ct 
+                                        .social.social-fixed.target-active
+                                            span.txt Chia sẻ: 
+                                            ul.social-list
+                                                li.social-item.btncopyJs(href="#" data-txt="Đã sao chép !")
+                                                    a.social-link
+                                                        +img("btn-share.png")
+                                                    .copy-msg
+                                                li.social-item
+                                                    a.social-link(href="#")
+                                                        +img("sc-1.png")
+                                                li.social-item
+                                                    a.social-link(href="#")
+                                                        +img("sc-2.png")
+                                                li.social-item
+                                                    a.social-link(href="#")
+                                                        +img("sc-3.png")
+                                                li.social-item
+                                                    a.social-link(href="#")
+                                                        +img("sc-4.png")
                             .col-rt.col.col-4
                                 .col-rt-wr
                                     //- box in fo

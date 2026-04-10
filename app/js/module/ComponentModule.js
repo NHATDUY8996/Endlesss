@@ -540,4 +540,29 @@ export default function ComponentModule() {
             }
         });
     }
+
+    // hpt js
+
+    // scroll target area
+    const scrollTarget = document.querySelectorAll(".scroll-target");
+    const targetActive = document.querySelector(".target-active");
+
+    if (scrollTarget.length > 0) {
+        function handleScroll() {
+            scrollTarget.forEach((scrollitem) => {
+                const itemTop = scrollitem.offsetTop;
+                const itemBottom = itemTop + scrollitem.offsetHeight;
+                const scrollY = window.scrollY + window.innerHeight / 2;
+
+                if (scrollY > itemTop + 400 && scrollY < itemBottom - 100) {
+                    targetActive?.classList.add("active");
+                } else {
+                    targetActive?.classList.remove("active");
+                }
+            });
+        }
+
+        handleScroll();
+        window.addEventListener("scroll", handleScroll);
+    }
 }

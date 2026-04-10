@@ -647,5 +647,8 @@
     .collapse-item:not(:last-child):not(.product_cat_price) {
         border-bottom: none;
     }
+}
 
+.dest-infor__controls.fixed .dest-infor__fixed::before {
+    background-color: var(--color-third) !important;
 }
