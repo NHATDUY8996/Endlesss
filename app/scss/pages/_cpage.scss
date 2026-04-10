@@ -250,11 +250,119 @@
 
 }
 
+.filter-slider {
+    &.has-btn {
+        padding: .8rem 5rem;
+        position: relative;
+        width: 70rem;
+        max-width: 100%;
+
+        .swiper-gr {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+
+            .swiper-btn {
+                pointer-events: visible;
+                display: flex !important;
+                background-color: transparent;
+                border: none;
+
+                &::before {
+                    display: none;
+                }
+
+                i {
+                    color: var(--color-pri);
+                }
+            }
+
+            .swiper-prev {
+                left: .8rem;
+            }
+
+            .swiper-next {
+                right: .8rem;
+            }
+        }
+
+    }
+
+    &.has-shadow {
+        background: #EFEDE6;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
+    }
+}
+
 .sec-journal {
+    position: relative;
+    background: #F7F6F2;
     padding: 18.6rem 0 10rem;
+
+    @include max(1200px) {
+        padding: 10rem 0;
+    }
+
+    @include max(768px) {
+        padding: 6rem 0;
+    }
+
+    &::after {
+        content: "";
+        background: linear-gradient(180deg, #DCE5C8 0%, #F7F6F2 50%), linear-gradient(180deg, rgba(255, 255, 255, 0.1) 65%, #F7F6F2 100%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 20%;
+
+        @include max(1200px) {
+            height: 5%;
+        }
+    }
+
+
+    .bg-ab {
+        top: -5%;
+        height: 50%;
+        mix-blend-mode: color-burn;
+        z-index: 2;
+
+        @include max(1200px) {
+            top: 0;
+        }
+
+        img {
+            object-position: top;
+
+            @include max(1200px) {
+                object-fit: contain;
+            }
+        }
+    }
+}
+
+.bg-ab {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
 
 .journal {
+    z-index: 2;
+
     &-head {}
 
     &-item {
@@ -268,13 +376,16 @@
 
         .t-tag {
             width: fit-content;
-            min-height: 3.6rem;
+            line-height: 150%;
+            max-width: 20rem;
+            height: 3.6rem;
             @include mid-flex;
             border-radius: 100rem;
             background-color: var(--color-second);
             color: #1F2A1A;
             padding: 1rem;
             @include fz-14;
+            @include lc(1);
         }
 
         .t-date {
@@ -296,8 +407,15 @@
             border-radius: .8rem;
         }
 
+        @include hover() {
+            img {
+                transform: translate(-50%, -50%) scale(1.05)
+            }
+        }
+
         img {
             @include imgCover;
+            transition: all .4s ease-out
         }
     }
 

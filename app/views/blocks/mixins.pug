@@ -104,15 +104,19 @@ mixin filterSlidersec(classCustom, arr)
                 each arrs, index in arr
                     .swiper-slide
                         .filter-link.swiper-link.tabBtn(class= index === 0 ? "active" : "") #{arrs.txt}
-
-mixin filterSlider(classCustom, arr)
+mixin filterSlider(classCustom, arr, swipergr)
     .filter-slider(class=classCustom)
         .swiper
             .swiper-wrapper
                 each arrs, index in arr
                     .swiper-slide
                         a.filter-link.swiper-link(href="" class= index === 0 ? "active" : "") #{arrs.txt}
-
+        if swipergr
+            .swiper-gr(class= classCustom)
+                .swiper-btn.swiper-prev
+                    i.fa-solid.fa-angle-left
+                .swiper-btn.swiper-next
+                    i.fa-solid.fa-angle-right
 mixin swiper(classCustom)
     .swiper(class= classCustom)
         .swiper-wrapper

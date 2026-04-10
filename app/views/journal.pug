@@ -7,6 +7,8 @@ block vars
 
 block container
     section.sec-journal
+        .bg-ab 
+            +img("bg-hro.png")
         .journal.relative
             .container 
                 .journal-wrap 
@@ -17,20 +19,19 @@ block container
                             "t-cpri f-100 t-upper txt-spl",
                             "")
                     .journal-main 
-                        +filterSlider("mx-auto mb-64", [
+                        +filterSlider("mx-auto mb-64 has-btn has-shadow", [
                             {txt: "All Tours"},
                             {txt: "Da Lat"},
                             {txt: "Buon Me Thuot"},
                             {txt: "Pleiku"},
                             {txt: "Kontum"},
                             {txt: "K'Bang"},
-                        ])
+                        ], true)
                         .journal-list 
                             .row.row-3
                                 each arr,i in Array(9)
                                     .col.col-4
                                         +journalItem(`journal-${i+1}.jpg`)
-                                .col.col-pagi 
-                                    +pagination()
+                            +pagination()
 
     +thumb()

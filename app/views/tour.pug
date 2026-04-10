@@ -10,7 +10,7 @@ block container
         .tour.pd-100
             .tour-bg 
                 .inner 
-                    +img("tour-bg.jpg")
+                    +img("bg-hro.png")
             .tour-wr 
                 .container 
                     .tour-head.mb-64
@@ -19,12 +19,12 @@ block container
                             "",
                             "t-cpri f-100 t-upper txt-spl",
                             "")
-                        +filterSlider("", [
+                        +filterSlider("has-btn has-shadow", [
                             {txt: "All Tours"},
                             {txt: "Central Vietnam"},
                             {txt: "Central Highlands"},
                             {txt: "Con Dao Islands"},
-                        ])
+                        ], true)
                     .tour-bdy 
                         .tour-row.row.row-3
                             - 
