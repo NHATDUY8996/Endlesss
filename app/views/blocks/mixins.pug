@@ -104,15 +104,19 @@ mixin filterSlidersec(classCustom, arr)
                 each arrs, index in arr
                     .swiper-slide
                         .filter-link.swiper-link.tabBtn(class= index === 0 ? "active" : "") #{arrs.txt}
-
-mixin filterSlider(classCustom, arr)
+mixin filterSlider(classCustom, arr, swipergr)
     .filter-slider(class=classCustom)
         .swiper
             .swiper-wrapper
                 each arrs, index in arr
                     .swiper-slide
                         a.filter-link.swiper-link(href="" class= index === 0 ? "active" : "") #{arrs.txt}
-
+        if swipergr
+            .swiper-gr(class= classCustom)
+                .swiper-btn.swiper-prev
+                    i.fa-solid.fa-angle-left
+                .swiper-btn.swiper-next
+                    i.fa-solid.fa-angle-right
 mixin swiper(classCustom)
     .swiper(class= classCustom)
         .swiper-wrapper
@@ -247,3 +251,18 @@ mixin thumb()
                             p.desc(data-aos="fade-up" data-aos-delay="200") Pick your favorite local experiences and let Mơ weave them into a sophisticated, unhurried, and safe master plan tailored just for you.
                             .thumb-btn(data-aos="fade-up" data-aos-delay="400")
                                 +btn("Start Building Your Journey","btn-sec btn-icon btn-main","","next.png","","")
+
+mixin journalItem(thumb)
+    .journal-item 
+        .wrap 
+            .journal-thumb 
+                a.journal-thumb-in(href="")
+                    +img(thumb)
+            .journal-content 
+                .journal-info 
+                    .t-tag 
+                        span.txt Eco-Friendly Stays
+                    .t-date Nov 25, 2026
+                h3
+                    a(href="").journal-tt The future of sustainable logistics: 5 trends to watch in 2025
+                p.journal-desc Located in the heart of central Vietnam, Phong Nha-Kẻ Bàng National Park is home to the most awe-inspiring caves and lush landscapes in the country. With its stunning natural beauty, unique wildlife, and rich cultural history, Phong Nha is a dream destination for adventure seekers and nature lovers alike.

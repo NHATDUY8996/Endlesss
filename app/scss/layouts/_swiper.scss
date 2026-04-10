@@ -21,12 +21,15 @@
         border: .1rem solid var(--color-second);
         flex-shrink: 0;
         @include fz-16;
+
         @include max(1300px) {
             --wbtn: 3.6rem;
         }
-        &.swiper-button-lock{
+
+        &.swiper-button-lock {
             display: none !important;
         }
+
         &::before {
             position: absolute;
             content: '';
@@ -46,6 +49,7 @@
             display: block;
             filter: var(--filter);
         }
+
         @include hover {
             border-color: var(--color-pri);
 
@@ -57,6 +61,7 @@
         &.swiper-button-disabled {
             pointer-events: none;
             opacity: .5;
+
             &::before {
                 transform: scale(0) !important;
             }
@@ -73,11 +78,14 @@
         }
 
     }
+
     &-next {
         right: calc(-1 * var(--wbtn)/2);
-        img{
+
+        img {
             transform: translateX(.1rem);
         }
+
         @include max(1610px) {
             right: 0;
         }
@@ -85,13 +93,16 @@
 
     &-prev {
         left: calc(-1 * var(--wbtn)/2);
-        img{
+
+        img {
             transform: translateX(-.1rem);
         }
+
         @include max(1610px) {
             left: 0;
         }
     }
+
     &-pagination {
         bottom: 0 !important;
         @include mid-flex;
@@ -99,9 +110,11 @@
         margin: 3rem auto 0 !important;
         position: relative;
         flex-wrap: wrap;
-        &.dflexpagi{
+
+        &.dflexpagi {
             display: flex;
         }
+
         &-progressbar {
             position: absolute !important;
         }
@@ -125,12 +138,13 @@
             // @include max(800px){
             //     --wbul: 2.2rem;
             // }
-         
+
             &-active {
                 opacity: 1 !important;
                 background-color: var(--color-pri);
                 width: 3rem;
-                &::before{
+
+                &::before {
                     background-color: var(--color-pri)
                 }
             }
@@ -138,20 +152,23 @@
 
         }
     }
-    &-scrollbar{
+
+    &-scrollbar {
         height: .2rem;
-        &-drag{
+
+        &-drag {
             background-color: var(--color-pri);
             height: .3rem;
             cursor: pointer;
         }
     }
 }
+
 .swiper-gr {
     @include mid-flex;
     gap: 1.2rem 1.6rem;
     margin: 0 auto;
-    
+
     &.swiper-ctn {
         position: absolute;
         z-index: 1;
@@ -166,20 +183,22 @@
             pointer-events: visible;
         }
     }
-    
+
     .swiper-pagination {
         @include min(1201px) {
             display: none;
         }
     }
-    &.relative{
-        @include min(1200px){
+
+    &.relative {
+        @include min(1200px) {
             @include flex;
             gap: 1.6rem;
             align-items: center;
             justify-content: flex-start;
             margin-right: auto;
-            .swiper-btn{
+
+            .swiper-btn {
                 position: relative;
                 left: auto;
                 right: auto;
@@ -187,12 +206,13 @@
                 transform: unset;
             }
         }
-        @include max(768px){
+
+        @include max(768px) {
             display: none;
         }
     }
 
-    &.fraction{
+    &.fraction {
         .swiper-pagination {
             font-size: 1.6rem;
             font-weight: 500;
@@ -204,9 +224,34 @@
             width: auto;
         }
     }
-    &.has-pagi{
+
+    &.has-pagi {
         .swiper-pagination {
             display: flex;
+        }
+    }
+}
+
+.swiper-disabled {
+    .swiper {
+        --cgap: 2.4rem;
+        --rgap: 2.4rem;
+        margin: 0 calc(var(--cgap) / 2 * -1) calc(var(--rgap) * -1);
+    }
+
+    @include min(1201px) {
+        .swiper {
+            overflow: visible;
+
+
+            &-wrapper {
+                flex-wrap: wrap;
+                transform: translate3d(0, 0, 0) !important;
+            }
+
+            &-pagination {
+                display: none;
+            }
         }
     }
 }

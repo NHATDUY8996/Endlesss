@@ -142,9 +142,11 @@
     @include max(1199px) {
         @include fz-36;
     }
-    .title-span{
+
+    .title-span {
         color: var(--color-second);
     }
+
     &.txt-spl .word {
         line-height: 1.3;
     }
@@ -155,9 +157,11 @@
             color: var(--color-second);
         }
     }
-    &.f-100{
+
+    &.f-100 {
         @include fz-100;
     }
+
     &.f-pri {
         @include fz-40;
     }
@@ -186,6 +190,7 @@
 
     &.t-sec {
         color: var(--color-second);
+
         span {
             color: var(--color-second);
         }
@@ -220,17 +225,24 @@
     @include max(768px) {
         margin-bottom: 2.4rem;
     }
-    &.title-left{
+
+    &.title-left {
         align-items: flex-start;
         text-align: left;
         max-width: 100%;
-        @include max(768px){
+
+        @include max(768px) {
             align-items: center;
             text-align: center;
         }
     }
-    .desc{
+
+    .desc {
         @include fz-20;
         max-width: 60rem;
     }
+}
+
+.title-40 {
+    @include fz-40;
 }

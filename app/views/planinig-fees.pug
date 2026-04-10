@@ -1,0 +1,143 @@
+extends layout/layout
+block vars
+    -title = 'Planining Fees'
+    -mainClass = 'page-plan'
+    -bodyClass = ''
+    -hdClass = ''
+
+block container
+    section.sec-tour
+        .tour.pd-100
+            .tour-bg 
+                .inner 
+                    +img("tour-bg.jpg")
+            .tour-wr 
+                .container 
+                    .tour-head.mb-64
+                        +breadCrumb([{txt: "Planning Fees"}])
+                        +ttp("planning fees",
+                            "",
+                            "t-cpri f-100 t-upper txt-spl",
+                            "")
+            .planbox
+                .container 
+                    .planbox-wrapper
+                        .planbox-inner
+                            .swiper     
+                                .swiper-wrapper 
+                                    .swiper-slide.col-4
+                                        .plan-card
+                                            .plan-header
+                                                p.txt DIRECT BOOKING
+                                                .price-badge Free
+                                            .plan-desc
+                                                p We secure your tour reservations at the best price. This is a "self-managed" option where you handle all your own timing and transportation.
+                                            ul.plan-features
+                                                li
+                                                    span.icon ✓
+                                                    | Tour Reservations
+                                                li
+                                                    span.icon ✓
+                                                    | Price Match Guarantee
+                                    .swiper-slide.col-4
+                                        .plan-card
+                                            .plan-header
+                                                p.txt ROUTE OPTIMIZER
+                                                .price $15
+                                            .plan-desc
+                                                p Perfect for the independent traveler who wants a professional "second pair of eyes" to review their logistics and provide specific bus and transfer schedules.
+                                            ul.plan-features
+                                                li
+                                                    span.icon ✓
+                                                    | Tour Reservations
+                                                li
+                                                    span.icon ✓
+                                                    | Price Match Guarantee
+                                                li
+                                                    span.icon ✓
+                                                    | Logistics Review
+                                                li
+                                                    span.icon ✓
+                                                    | Bus/Transfer Schedule
+                                    .swiper-slide.col-4
+                                        .plan-card 
+                                            .plan-header
+                                                p.txt HERITAGE ARCHITECT
+                                                .price $25
+                                            .plan-desc
+                                                p Our most popular choice for those seeking a deeper connection. We fully optimize your itinerary and provide a curated list of "Hidden Gems" to ensure you experience the most authentic local spots.
+                                            ul.plan-features
+                                                li
+                                                    span.icon ✓
+                                                    | Tour Reservations
+                                                li
+                                                    span.icon ✓
+                                                    | Price Match Guarantee
+                                                li
+                                                    span.icon ✓
+                                                    | Logistics Review
+                                                li
+                                                    span.icon ✓
+                                                    | Bus/Transfer Schedule
+                                                li
+                                                    span.icon ✓
+                                                    | Itinerary Optimization
+                                                li
+                                                    span.icon ✓
+                                                    | Hidden Gem List
+                                    .swiper-slide.col-4
+                                        .plan-card
+                                            .plan-header
+                                                p.txt ENDLESS CONCIERGE
+                                                .price $50
+                                            .plan-desc
+                                                p Total peace of mind. You receive all the benefits of our other packages, plus <strong>24/7 priority support</strong> from our experts throughout your entire journey.
+                                            ul.plan-features
+                                                li
+                                                    span.icon ✓
+                                                    | Tour Reservations
+                                                li
+                                                    span.icon ✓
+                                                    | Price Match Guarantee
+                                                li
+                                                    span.icon ✓
+                                                    | Logistics Review
+                                                li
+                                                    span.icon ✓
+                                                    | Bus/Transfer Schedule
+                                                li
+                                                    span.icon ✓
+                                                    | Itinerary Optimization
+                                                li
+                                                    span.icon ✓
+                                                    | Hidden Gem List
+                                                li
+                                                    span.icon ✓
+                                                    | 24/7 Priority Support
+                    .swiper-pagination
+    section.sec-faqs 
+        .faqs.pd-100
+            .faqs-bg
+                .inner
+                    +img("faqs-bg.jpg")
+            .container 
+                .faqs-wr 
+                    .faqs-head.title-head 
+                        p.title-tag(data-aos="zoom-in") FAQs
+                        +ttp("Frequently Asked Questions",
+                            "",
+                            "t-cpri t-upper txt-spl",
+                            "")
+                    .faqs-bdy.collapse-block(data-aos="fade-up")
+                        .faqs-list
+                            each val,index in Array(5)
+                                .faqs-item.collapse-item
+                                    .head.collapse-head 
+                                        .icon 
+                                            +img("faqs-icon.png")
+                                        .plus
+                                    h3.tt Is Endless Vietnam a travel agency?
+                                    .faqs-content.collapse-body 
+                                        .mona-content 
+                                            p While we focus on designing complete journeys, you can certainly start with one experience. However, the true "Endless Vietnam" magic happens when we design the flow between them for you.
+    +thumb()

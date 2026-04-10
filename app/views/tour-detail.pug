@@ -10,13 +10,14 @@ block container
         .tourdt.pd-100
             .tourdt-wr 
                 .container 
-                    .tourdt-head.title-head.mb-64
-                        +breadCrumb([{txt: "DONG HOI SIGHTSEEING & STREET FOOD BY BICYCLES"}])
-                        +ttp("DONG HOI SIGHTSEEING & STREET FOOD BY BICYCLES",
-                            "",
-                            "t-cpri t-upper txt-spl",
-                            "")
-                        p.desc Phong Nha Local Guide Collective
+                    .tourdt-heading.mb-64
+                        .tourdt-head.title-head
+                            +breadCrumb([{txt: "DONG HOI SIGHTSEEING & STREET FOOD BY BICYCLES"}])
+                            +ttp("DONG HOI SIGHTSEEING & STREET FOOD BY BICYCLES",
+                                "",
+                                "t-cpri t-upper txt-spl",
+                                "")
+                            p.desc Phong Nha Local Guide Collective
                     .tourdt-slider(data-aos="zoom-in")
                         +swiper()
                             each val,index in Array(5)
@@ -25,13 +26,318 @@ block container
                                         .pduct-img-inner 
                                             +img(`pduct-${index + 1}.jpg`)
                         +swiperbtn()
-                    .tourdt-slider-gr 
-                        .tourdt-btn
-                            +btn("Book Now","btn-sec btn-reverse btn-main","fa-solid fa-play","","","")
-                        .swiper-gr.fraction.has-pagi
-                            .swiper-pagination
+                    .tourdt-main.mt-64
+                        .row 
+                            .col-lf.col.col-8
+                                .col-lf-wr
+                                    .tourdt-list 
+                                        .list 
+                                            -
+                                                var arrays = [
+                                                    {
+                                                        icon : "i-1.png",
+                                                        title: "Location",
+                                                        txt: "Quang Binh province",
+                                                    },
+                                                    {
+                                                        icon : "i-2.png",
+                                                        title: "Best season",
+                                                        txt: "Feb, Mar, Apr & May",
+                                                    },
+                                                    {
+                                                        icon : "i-3.png",
+                                                        title: "Availability",
+                                                        txt: "Every afternoon ",
+                                                    },
+                                                    {
+                                                        icon : "i-4.png",
+                                                        title: "level",
+                                                        txt: "Easy",
+                                                    },
+                                                    {
+                                                        icon : "i-5.png",
+                                                        title: "Group Size",
+                                                        txt: "10 guests ",
+                                                    },
+                                                    {
+                                                        icon : "i-6.png",
+                                                        title: "Age",
+                                                        txt: "4-75 years old",
+                                                    },
+                                                    {
+                                                        icon : "i-7.png",
+                                                        title: "Transportation",
+                                                        txt: "Bus, Airlines",
+                                                    },
+                                                    {
+                                                        icon : "i-8.png",
+                                                        title: "Accomodation",
+                                                        txt: "3-Star Hotels",
+                                                    },
+                                                    {
+                                                        icon : "i-9.png",
+                                                        title: "Meals",
+                                                        txt: "All meals during the trek",
+                                                    },
+                                                ];
+                                            each arr in arrays
+                                                .item 
+                                                    .wrap 
+                                                        .icon 
+                                                            +img(arr.icon)
+                                                        .info-wrap 
+                                                            p.label.t-upper.fw-7= arr.title
+                                                            span.txt= arr.txt
+                                    .tourdt-content.mt-40
+                                        .inner 
+                                            .title-40.mb-32 more infomation
+                                            .dest-infor__controls
+                                                .dest-infor__fixed.mb-32.dest-infor__fixed
+                                                    .swiper.row
+                                                        .swiper-wrapper
+                                                            .swiper-slide.col
+                                                                a(href="#overview").dest-infor__control.active
+                                                                    | Overview
+                                                            .swiper-slide.col
+                                                                a(href="#itinerary").dest-infor__control 
+                                                                    | Itinerary
+                                                            .swiper-slide.col
+                                                                a(href="#pricing").dest-infor__control 
+                                                                    | Pricing
+                                                            .swiper-slide.col
+                                                                a(href="#what-to-bring").dest-infor__control 
+                                                                    | What to bring
+                                                            .swiper-slide.col
+                                                                a(href="#faqs").dest-infor__control 
+                                                                    | FAQs
+                                            .tourdt-content-block
+                                                .tourdt-content-panel#overview
+                                                    .content-box 
+                                                        .title.mb-24 Overview
+                                                        .mona-content 
+                                                            p Dong Hoi is said to be a small, tranquil city with a laid-back atmosphere. Therefore, this little town is considered the perfect destination for relaxing after the exciting adventures in Phong Nha. A half-day cycling trip around the city with historic monuments and the local food will be worth slowing down in your vacation to Vietnam.
+                                                            p During your tour, you will meet local vendors who are welcome to introduce you to the type of food they sell. This is a great chance for you to learn how the food was made, or how the traditional food helped the locals to survive through hard times.
+                                                            p Whether you are travelling on a set plan or are open to any chances to explore the world, don’t forget to reward yourself with the hidden charms waiting for you in Dong Hoi.
+                                                        .box-desc 
+                                                            .in 
+                                                                p.tt highlight
+                                                                .mona-content 
+                                                                    ul
+                                                                        li All visits to the mentioned attractions, providing you with a comprehensive experience of the region
+                                                                        li Enjoy a diverse range of local foods at different restaurants and food stalls, offering you a true taste of Dong Hoi, Vietnam
+                                                                        li Each participant will receive a bottle of water to stay hydrated during the trip (reusable bottles).
+                                                                        li An English-speaking tour guide will accompany you throughout the journey, providing valuable insights and answering any questions you may have
+                                                                        li Bicycles will be provided for each participant, ensuring a comfortable and enjoyable riding experience
+                                                .tourdt-content-panel#itinerary
+                                                    .content-box 
+                                                        .title.mb-24 Itinerary
+                                                        .cl-schedule.collapse-block
+                                                            .cl-schedule-tt day 1: dong hoi 
+                                                            .cl-schedule-list 
+                                                                .cl-schedule-item
+                                                                    .cl-schedule-main.collapse-item
+                                                                        .cl-schedule-head.collapse-head
+                                                                            .tt-head 
+                                                                                p.tt 1:15pm
+                                                                                i.fa-solid.fa-angle-down 
+                                                                        .cl-schedule-body.collapse-body
+                                                                            p.text Meet up at Cagina Boutique Hostel & Coffee for a drink and the brief (124A Le Thanh Dong Street, Dong Hoi, Quang Binh). Pick up your bicycles. Enjoy a detailed briefing about the route and study the map to get better acquainted with the journey that lies ahead.
+                                                                    .cl-schedule-main.collapse-item
+                                                                        .cl-schedule-head.collapse-head
+                                                                            .tt-head 
+                                                                                p.tt 1:15pm
+                                                                                i.fa-solid.fa-angle-down 
+                                                                        .cl-schedule-body.collapse-body
+                                                                            p.text Meet up at Cagina Boutique Hostel & Coffee for a drink and the brief (124A Le Thanh Dong Street, Dong Hoi, Quang Binh). Pick up your bicycles. Enjoy a detailed briefing about the route and study the map to get better acquainted with the journey that lies ahead.
+                                                                    .cl-schedule-main.collapse-item
+                                                                        .cl-schedule-head.collapse-head
+                                                                            .tt-head 
+                                                                                p.tt 1:15pm
+                                                                                i.fa-solid.fa-angle-down 
+                                                                        .cl-schedule-body.collapse-body
+                                                                            p.text Meet up at Cagina Boutique Hostel & Coffee for a drink and the brief (124A Le Thanh Dong Street, Dong Hoi, Quang Binh). Pick up your bicycles. Enjoy a detailed briefing about the route and study the map to get better acquainted with the journey that lies ahead.
+                                                                    .cl-schedule-main.collapse-item
+                                                                        .cl-schedule-head.collapse-head
+                                                                            .tt-head 
+                                                                                p.tt 1:15pm
+                                                                                i.fa-solid.fa-angle-down 
+                                                                        .cl-schedule-body.collapse-body
+                                                                            p.text Meet up at Cagina Boutique Hostel & Coffee for a drink and the brief (124A Le Thanh Dong Street, Dong Hoi, Quang Binh). Pick up your bicycles. Enjoy a detailed briefing about the route and study the map to get better acquainted with the journey that lies ahead.
+                                                        .cl-schedule.collapse-block
+                                                            .cl-schedule-tt day 2: dong hoi 
+                                                            .cl-schedule-list 
+                                                                .cl-schedule-item
+                                                                    .cl-schedule-main.collapse-item
+                                                                        .cl-schedule-head.collapse-head
+                                                                            .tt-head 
+                                                                                p.tt 1:15pm
+                                                                                i.fa-solid.fa-angle-down 
+                                                                        .cl-schedule-body.collapse-body
+                                                                            p.text Meet up at Cagina Boutique Hostel & Coffee for a drink and the brief (124A Le Thanh Dong Street, Dong Hoi, Quang Binh). Pick up your bicycles. Enjoy a detailed briefing about the route and study the map to get better acquainted with the journey that lies ahead.
+                                                                    .cl-schedule-main.collapse-item
+                                                                        .cl-schedule-head.collapse-head
+                                                                            .tt-head 
+                                                                                p.tt 1:15pm
+                                                                                i.fa-solid.fa-angle-down 
+                                                                        .cl-schedule-body.collapse-body
+                                                                            p.text Meet up at Cagina Boutique Hostel & Coffee for a drink and the brief (124A Le Thanh Dong Street, Dong Hoi, Quang Binh). Pick up your bicycles. Enjoy a detailed briefing about the route and study the map to get better acquainted with the journey that lies ahead.
+                                                                    .cl-schedule-main.collapse-item
+                                                                        .cl-schedule-head.collapse-head
+                                                                            .tt-head 
+                                                                                p.tt 1:15pm
+                                                                                i.fa-solid.fa-angle-down 
+                                                                        .cl-schedule-body.collapse-body
+                                                                            p.text Meet up at Cagina Boutique Hostel & Coffee for a drink and the brief (124A Le Thanh Dong Street, Dong Hoi, Quang Binh). Pick up your bicycles. Enjoy a detailed briefing about the route and study the map to get better acquainted with the journey that lies ahead.
+                                                                    .cl-schedule-main.collapse-item
+                                                                        .cl-schedule-head.collapse-head
+                                                                            .tt-head 
+                                                                                p.tt 1:15pm
+                                                                                i.fa-solid.fa-angle-down 
+                                                                        .cl-schedule-body.collapse-body
+                                                                            p.text Meet up at Cagina Boutique Hostel & Coffee for a drink and the brief (124A Le Thanh Dong Street, Dong Hoi, Quang Binh). Pick up your bicycles. Enjoy a detailed briefing about the route and study the map to get better acquainted with the journey that lies ahead.
 
+                                                .tourdt-content-panel#pricing
+                                                    .content-box 
+                                                        .title.mb-24 Pricing
+                                                        .content-panel-list
+                                                            .content-panel 
+                                                                .tt The Cost Includes
+                                                                ul
+                                                                    li 
+                                                                        +img("checked-2.png")
+                                                                        | All visits to the mentioned attractions provide you with a comprehensive experience of the region.
+                                                                    li 
+                                                                        +img("checked-2.png")
+                                                                        | Enjoy a diverse range of local foods at different restaurants and food stalls, offering you a true taste of Dong Hoi, Vietnam.
+                                                                    li 
+                                                                        +img("checked-2.png")
+                                                                        | Each participant will receive a bottle of water to stay hydrated during the trip (reusable bottles).
+                                                                    li 
+                                                                        +img("checked-2.png")
+                                                                        | An English-speaking tour guide will accompany you throughout the journey, providing valuable insights and answering any questions you may have
+                                                                    li 
+                                                                        +img("checked-2.png")
+                                                                        | Bicycles will be provided for each participant, ensuring a comfortable and enjoyable riding experience.
+                                                            .content-panel
+                                                                .tt The Cost Excludes
+                                                                ul
+                                                                    li 
+                                                                        +img("xmark.png")
+                                                                        | Gratuities for the tour guide and hosts.
+                                                                    li 
+                                                                        +img("xmark.png")
+                                                                        | Extra drinks or snacks that are not mentioned above.
+                                                .tourdt-content-panel#what-to-bring
+                                                    .content-box 
+                                                        .title.mb-24 What to bring
+                                                        .mona-content 
+                                                            ul
+                                                                li Sun glasses
+                                                                li Sun hats
+                                                                li Sunscreen
+                                                .tourdt-content-panel#faqs
+                                                    .content-box 
+                                                        .title.mb-24 faqs
+                                                        .faqs-bdy.collapse-block
+                                                            .faqs-list
+                                                                each val,index in Array(5)
+                                                                    .faqs-item.collapse-item
+                                                                        .head.collapse-head 
+                                                                            .icon 
+                                                                                +img("faqs-icon.png")
+                                                                            .plus
+                                                                        h3.tt Is Endless Vietnam a travel agency?
+                                                                        .faqs-content.collapse-body 
+                                                                            .mona-content 
+                                                                                p While we focus on designing complete journeys, you can certainly start with one experience. However, the true "Endless Vietnam" magic happens when we design the flow between them for you.
 
+                            .col-rt.col.col-4
+                                .col-rt-wr
+                                    //- box in fo
+                                    .tour-box 
+                                        .in 
+                                            .tour-box-price 
+                                                .box 
+                                                    span.label Adult
+                                                    .t-price 
+                                                        span $95
+                                                        | /person
+                                                .box 
+                                                    span.label Child
+                                                    .t-price 
+                                                        span $65
+                                                        | /person
+                                            .tour-box-info 
+                                                ul
+                                                    li 
+                                                        +img("checked-2.png")
+                                                        | Fair & Transparent Pricing
+                                                    li 
+                                                        +img("checked-2.png")
+                                                        | Zero Hidden Costs
+                                                    li 
+                                                        +img("checked-2.png")
+                                                        | Mo's Handpicked Local Experts
+                                            .tour-box-ct 
+                                                +btn("Add to My Journey","btn-sec wfull btn-icon btn-main","","cart.png","","")
+                                                .text 
+                                                    span or 
+                                                    +social("Talk to Mơ via",[{images: "sc-1.png"},{images: "sc-2.png"},{images: "sc-3.png"},{images: "sc-4.png"}],"")
+
+                                    //- related tours 
+                                    .tour-relate.mt-40
+                                        p.tt.t-upper.fw-7.mb-16 relate tours 
+                                        .tour-relate-slider.swiper-disabled
+                                            +swiper()
+                                                - 
+                                                    const arrs = [
+                                                        {
+                                                            imgtag: "Quang Tri",
+                                                            img: "pduct-1.jpg",
+                                                            tag: "Phong Nha Local Guide Collective",
+                                                            title: "Phong Nha Sunset & Cave Adventure"},
+                                                        {
+                                                            imgtag: "Da Nang",
+                                                            img: "pduct-2.jpg",
+                                                            tag: "Pineapple Lantern Workshop",
+                                                            title: "Hoi An Lantern Craft & Old Town Walk"
+                                                        },
+                                                        {
+                                                            imgtag: "Hue",
+                                                            img: "pduct-3.jpg",
+                                                            tag: "Hue Local Riders",
+                                                            title: "Hue Street Food & Heritage Ride"
+                                                        },
+                                                    ]
+                                                each arr in arrs
+                                                    .swiper-slide.col
+                                                        .pduct
+                                                            .pduct-img 
+                                                                .pduct-img-inner 
+                                                                    +img(arr.img)
+                                                            .pduct-tag
+                                                                p.tag
+                                                                    +img("location.png")
+                                                                    = arr.imgtag
+                                                            .pduct-desc
+                                                                .pduct-desc-inner
+                                                                    p.pduct-desc-tag= arr.tag
+                                                                    h3.pduct-tt
+                                                                        a.link(href="")= arr.title
+                                                                    ul.pduct-list 
+                                                                        li.pduct-item
+                                                                            span.txt Adult 
+                                                                                span.text 
+                                                                                    span.bold  $95
+                                                                                    |/person
+                                                                        li.pduct-item
+                                                                            span.txt Child 
+                                                                                span.text
+                                                                                    span.bold  $75
+                                                                                    |/person
+                                                                .pduct-btn
+                                                                    +btn("Explore the Tour","btn-pri btn-icon btn-main","","next.png","","")
+                                            .swiper-pagination 
     section.sec-tourrlt 
         .tourrlt.mb-100 
             .container 
@@ -110,9 +416,6 @@ block container
                                                                 |/person
                                             .pduct-btn
                                                 +btn("Explore the Tour","btn-pri btn-icon btn-main","","next.png","","")
-
                         .swiper-pagination 
-
-
     +thumb()
 
