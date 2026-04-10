@@ -9,7 +9,7 @@
     font-family: var(--font-pri);
 }
 @mixin fontsec{
-    font-family: var(--font-pri);
+    font-family: var(--font-sec);
 }
 @mixin imgZoom {
     @include transitionRe;

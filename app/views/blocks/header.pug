@@ -169,3 +169,43 @@ header.header
                         .ctact-btn 
                             +btn("Send message","btn-sec btn-icon btn-main","","next.png","","")
                             p.desc *Average design time: 24 hours 
+
+    .mncart-overlay
+    .mncart 
+        .mncart-wr
+            .mncart-close 
+                i.fa-solid.fa-xmark
+            .mncart-bdy
+                .mncart-head 
+                    h4.mncart-tt SELECTED EXPERIENCES
+                    a.mncart-link(href="") 
+                        +img("minicart-link.png")
+
+                .mncart-inner
+                    .mncart-list
+                        each i,index in Array(7)
+                            .mncart-item
+                                p.numb #{index + 1}
+                                .pduct
+                                    .pduct-img 
+                                        .pduct-img-inner 
+                                            +img("pduct-1.jpg")
+                                    .pduct-desc
+                                        .pduct-desc-inner
+                                            p.pduct-desc-tag Hue
+                                            h3.pduct-tt
+                                                a.link(href="") Hue Street Food & Heritage Ride
+                                            ul.pduct-list 
+                                                li.pduct-item
+                                                    span.txt Adult 
+                                                        span.text 
+                                                            span.bold  $95
+                                                            |/person
+                                                li.pduct-item
+                                                    span.txt Child 
+                                                        span.text
+                                                            span.bold  $75
+                                                            |/person
+
+            .mncart-gr 
+                +btn("Request My Master Plan","btn-sec btn-main btn-icon","","next.png","","")
